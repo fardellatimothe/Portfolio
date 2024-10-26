@@ -3,92 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sur la Route de l'Ingenieurie</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="icon" type="image/png" href="favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+    <link rel="manifest" href="/img/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-800">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Mon Portfolio</h1>
-            <ul class="flex space-x-6">
-                <li><a href="#about" class="hover:text-blue-500">À propos</a></li>
-                <li><a href="#projects" class="hover:text-blue-500">Projets</a></li>
-                <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<body>
 
-    <!-- Hero Section -->
-    <section class="bg-blue-500 text-white py-20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold">Bienvenue sur mon Portfolio</h2>
-            <p class="mt-4 text-lg">Je suis un développeur passionné par la création de solutions techniques innovantes.</p>
-            <a href="#projects" class="mt-8 inline-block bg-white text-blue-500 py-2 px-4 rounded-lg hover:bg-gray-100">Voir mes projets</a>
+    <!-- Barre de navigation avec logo -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo-slogan" onclick="refreshPage()">
+                <img src="/img/Logosite_page.png" alt="Logo" class="logo">
+                <h1 class="title-slogan">OPTIMISER LE PRÉSENT, CRÉER L'AVENIR.</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#formation">Formation</a></li>
+                    <li><a href="#competences">Compétences</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section A Propos -->
+    <section id="apropos" class="about-section">
+        <div class="about-container">
+            <img src="/img/photo-cesi.jpg" alt="Ma Photo" class="about-image">
+            <div class="about-content">
+                <h2>Bienvenue sur mon Portfolio !</h2>
+                <p>Étudiant en ingénierie informatique, passionné par la technologie et le développement. J'aime explorer de nouvelles idées et relever des défis.</p>
+                <ul class="skills-list">
+                    <li>🌟 Passionné par le développement web</li>
+                    <li>🔧 Compétences en programmation C et JavaScript</li>
+                    <li>💡 Créativité dans la résolution de problèmes</li>
+                    <li>📈 Toujours à l'écoute des nouvelles technologies</li>
+                </ul>
+                <a href="#projects" class="cta-button">Découvrez mes projets</a>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold">À propos de moi</h2>
-            <p class="mt-4 text-lg">Je suis un étudiant en ingénierie informatique avec un fort intérêt pour l'apprentissage de nouvelles technologies et la résolution de problèmes complexes. Mes compétences incluent le développement web, la programmation en C et la maîtrise des outils modernes comme Tailwind CSS.</p>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold">Projets récents</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
-                <!-- Project 1 -->
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <img src="https://via.placeholder.com/150" alt="Projet 1" class="rounded-lg mb-4">
-                    <h3 class="text-xl font-bold">Projet 1</h3>
-                    <p class="mt-2">Description de votre premier projet ici. Cela peut être une application web, un site, ou tout autre projet technique.</p>
+    <!-- Section Projets -->
+    <section id="projects" class="projets">
+        <div class="container">
+            <h2>Mes Projets</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Projet 1</h3>
+                    <p>Description du projet.</p>
                 </div>
-                <!-- Project 2 -->
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <img src="https://via.placeholder.com/150" alt="Projet 2" class="rounded-lg mb-4">
-                    <h3 class="text-xl font-bold">Projet 2</h3>
-                    <p class="mt-2">Description de votre deuxième projet ici.</p>
+                <div class="project-card">
+                    <h3>Projet 2</h3>
+                    <p>Description du projet.</p>
                 </div>
-                <!-- Project 3 -->
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <img src="https://via.placeholder.com/150" alt="Projet 3" class="rounded-lg mb-4">
-                    <h3 class="text-xl font-bold">Projet 3</h3>
-                    <p class="mt-2">Description de votre troisième projet ici.</p>
+                <div class="project-card">
+                    <h3>Projet 3</h3>
+                    <p>Description du projet.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold">Me Contacter</h2>
-            <p class="mt-4 text-lg">N'hésitez pas à me contacter pour toute opportunité de stage, d'alternance, ou de collaboration.</p>
-            <form action="#" class="mt-8 max-w-md mx-auto">
-                <div class="mb-4">
-                    <input type="text" placeholder="Votre nom" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                </div>
-                <div class="mb-4">
-                    <input type="email" placeholder="Votre email" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                </div>
-                <div class="mb-4">
-                    <textarea placeholder="Votre message" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Envoyer</button>
-            </form>
+    <!-- Section À propos -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>À propos de moi</h2>
+            <p>Je suis un étudiant en ingénierie passionné par le développement web et les nouvelles technologies. J'aime apprendre de nouvelles compétences pour me perfectionner dans mon domaine.</p>
         </div>
     </section>
 
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre email" required>
+                <textarea placeholder="Votre message" required></textarea>
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Fleche back to top-->
+    <div class="back-to-top" onclick="scrollToTop()">
+        &#129045;
+    </div>
+    
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-6">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024  Développé par TIMOTHÉ FARDELLA.</p>
         </div>
     </footer>
+
+    
+
+    <script src="script.js"></script>
 </body>
-</html>"# Portfolio" 
+</html>
