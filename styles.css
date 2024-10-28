@@ -23,20 +23,24 @@ body {
 
 /* Barre de navigation */
 .navbar {
-    background-color: var(--light-blue);
-    padding: 20px 0 20px;
+    background-color: var(--light-gray);
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar .container {
+    background-color: var(--light-blue);
     display: flex;
     justify-content: space-between; /* Pour espacer les éléments */
     align-items: center;
-    margin-left: 25px;
-    margin-right: 25px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
     max-width: 100%;
+    border-radius: 75px;
+    margin: 10px 5px 10px 5px; /*haut droit bas gauche*/
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .logo-slogan {
@@ -52,11 +56,12 @@ body {
 }
 
 .title-slogan {
-    font-size: 25px;
+    font-size: 22px;
     color: var(--dark-gray); /* Assurez-vous d'avoir défini cette variable */
 }
 
 .nav-links {
+    font-size: 18px;
     list-style: none;
     display: flex;
     font-weight: bold;
@@ -81,81 +86,134 @@ body {
 
 
 /* Section d'introduction */
-.about-section {
-    background-color:var(--light-gray); /* Couleur d'arrière-plan bleu clair */
-    padding: 50px 20px; /* Espacement vertical */
-    display: flex; /* Utiliser flexbox pour le centrage */
-    justify-content: center; /* Centrer le contenu horizontalement */
-    align-items: center; /* Centrer le contenu verticalement */
-}
-
 .about-container {
-    display: flex; /* Utiliser flexbox pour l'alignement de l'image et du contenu */
-    align-items: center; /* Aligne verticalement l'image et le contenu */
-    justify-content: center; /* Centre le contenu horizontalement */
-    max-width: 1200px; /* Largeur maximale pour un bon rendu */
-    margin: 0 auto; /* Centre le conteneur */
-    padding: 30px; /* Espacement intérieur */
-    border-radius: 15px; /* Coins arrondis */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre autour du conteneur */
-    background-color: #FFFFFF; /* Arrière-plan blanc pour le conteneur */
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .about-image {
-    width: 150px; /* Largeur de l'image */
-    height: 150px; /* Hauteur de l'image */
-    border-radius: 50%; /* Arrondir l'image pour un effet de cercle */
-    margin-right: 30px; /* Espace entre l'image et le contenu */
-    border: 3px solid #1E3A8A; /* Bordure colorée autour de l'image */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre autour de l'image */
-    object-fit: cover; /* S'assure que l'image couvre tout le cadre */
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 .about-content {
-    max-width: 600px; /* Largeur maximale du contenu */
-    text-align: left; /* Alignement du texte à gauche */
+    flex: 1;
 }
 
-h2 {
-    color: #1E3A8A; /* Couleur du titre */
-    font-size: 2.5rem; /* Taille du titre */
-    margin-bottom: 15px; /* Espacement en bas */
-}
-
-p {
-    color: #4B5563; /* Couleur du texte descriptif */
-    font-size: 1.2rem; /* Taille du texte */
-    margin-bottom: 20px; /* Espacement en bas */
+.about-content p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #555;
 }
 
 .skills-list {
-    list-style: none; /* Enlève les puces de la liste */
-    padding: 0; /* Enlève le padding */
-    margin: 20px 0; /* Espace vertical autour de la liste */
+    list-style: none;
+    padding: 0;
 }
 
 .skills-list li {
-    margin: 10px 0; /* Espacement entre les éléments de la liste */
-    font-size: 1.1rem; /* Taille du texte des compétences */
-    color: #4B5563; /* Couleur du texte des compétences */
+    font-size: 1.1rem;
+    color: #555;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
 }
 
+.skills-list li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #0073e6;
+}
+
+/* Bouton CTA */
 .cta-button {
     display: inline-block;
-    padding: 10px 20px; /* Espacement interne */
-    background-color: #60A5FA; /* Couleur du bouton */
-    color: white; /* Couleur du texte du bouton */
-    border-radius: 5px; /* Coins arrondis */
-    text-decoration: none; /* Enlève le soulignement */
-    transition: background-color 0.3s; /* Transition pour l'effet au survol */
-    font-size: 1.1rem; /* Taille du texte du bouton */
-    margin-top: 15px; /* Espacement au-dessus du bouton */
+    background-color: #0073e6;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #1E3A8A; /* Couleur au survol */
+    background-color: #005bb5;
 }
+
+/* Effet de Machine à Écrire */
+.console-container {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    top: 0.15em;
+    margin-left: 0.1em;
+    animation: blink 1s infinite;
+}
+
+/* Animation de Clignotement */
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51.01%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Section Globale */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* En-tête */
+header {
+    background-color: #0073e6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
+
+header h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Titre Section A Propos */
+.about-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
 
 /* Section projets */
 .projects {
@@ -178,6 +236,7 @@ p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+
 /* Section À propos */
 .about {
     padding: 50px 20px;
@@ -185,33 +244,141 @@ p {
     text-align: center;
 }
 
-/* Section Contact */
-.contact {
-    padding: 50px 20px;
+
+/* Section de contact */
+.contact-section {
+    padding: 60px 20px;
+    background-color: var(--light-gray);
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e3a8a; 
+    text-align: center;
+    margin-bottom: 30px; 
+}
+
+.contact-column {
+    display: flex; 
+    gap: 20px; /* Espacement entre les colonnes */
+}
+
+.contact-info {
+    background-color: white;
+    padding: 40px 40px 20px 40px;/*haut droit bas gauche*/
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 150px;
+    height: 280px;
     text-align: center;
 }
 
-.contact form {
-    max-width: 500px;
-    margin: 0 auto;
+.contact-coordonnee {
+    margin-bottom: 20px;
 }
 
-.contact input, .contact textarea {
+.contact-coordonnee-span {
+    max-width: 100%;
+    text-align: center;
+}
+
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: var(--dark-gray); 
+}
+
+.contact-item-place i {
+    margin-right: 10px;
+    color: var(--dark-blue); 
+    font-size: 1.3rem;
+}
+
+.linkedin-icon i {
+    color: var(--dark-blue);
+    margin-right: 5px;
+}
+
+.github-icon i {
+    margin-right: 5px;
+    margin-left: 5px;
+    color: var(--dark-blue);
+}
+
+.facebook-icon i {
+    margin-left: 5px;
+    color: var(--dark-blue);
+}
+
+.linkedin-icon i,
+.github-icon i,
+.facebook-icon i {
+    font-size: 2rem;
+    transition: color 0.3s;
+    margin-top: 20px;
+    transition: transform 0.3s;
+}
+
+.linkedin-icon:hover i,
+.github-icon:hover i,
+.facebook-icon:hover i {
+    color: var(--dark-gray);
+    transform: scale(1.2);
+}
+
+.contact-form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 200px;
+    margin-right: 150px;
+}
+
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
     border: 1px solid var(--dark-gray);
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
 }
 
-.contact button {
-    width: 100%;
+.contact-message {
+    height: 110px;
+    resize: none;
+}
+
+.message-icon {
+    margin-right:5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: var(--dark-blue);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.contact-form button:active {
+    background-color: var(--dark-gray);
 }
 
 
 /* Footer */
 footer {
-    background-color: var(--dark-blue); /* Correspond à bg-gray-900 */
+    background-color: var(--light-blue);
     padding: 1.5rem 0; 
     display: flex;
     justify-content: center;
@@ -220,23 +387,25 @@ footer {
 }
 
 .container {
-    max-width: 100%; /* Ajuste la largeur selon tes besoins */
-    margin: 0 auto; /* Centre le conteneur */
-    text-align: center; /* Correspond à text-center */
+    max-width: 100%; 
+    margin: 0 auto; 
+    text-align: center; 
 }
 
 footer p {
     color: var(--light-gray);
-    margin: 0 auto; /* Centre le texte */
+    margin: 0 auto; 
 }
+
+/*Button pour revenir en haut*/
 
 .back-to-top {
     position: fixed;
-    bottom: 85px;
+    bottom: 82px;
     right: 20px;
     width: 40px;
     height: 40px;
-    background-color: #1E3A8A; /* Couleur du bouton */
+    background-color: var(--dark-blue); /* Couleur du bouton */
     color: white;
     border-radius: 50%;
     text-align: center;
@@ -249,7 +418,6 @@ footer p {
     transition: opacity 0.3s, visibility 0.3s;
 }
 
-
 .back-to-top.show {
     opacity: 1;
     visibility: visible;
@@ -261,3 +429,45 @@ footer p {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ombre portée */
 }
 
+.typing-animation {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap; /* Pour s'assurer que le texte reste sur une seule ligne */
+    overflow: hidden;    /* Cache le texte débordant */
+    border-right: 3px solid; /* Simule le curseur */
+    width: 0;            /* La largeur commence à 0 pour l'animation */
+    animation: typing 3s steps(30, end), blink-caret 0.6s step-end infinite;
+}
+
+/*
+@import url(https://fonts.googleapis.com/css?family=Khula:700);
+body {
+  background: var(--light-gray);
+}
+.hidden {
+  opacity:0;
+}
+.console-container {
+ 
+  font-family:"Roboto", Arial;
+  font-size:4em;
+  text-align:center;
+  height:200px;
+  width:600px;
+  display:block;
+  position:absolute;
+  color:white;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.console-underscore {
+   display:inline-block;
+  position:relative;
+  top:-0.14em;
+  left:10px;
+}
+*/

@@ -6,7 +6,7 @@
     <title>Sur la Route de l'Ingenieurie</title>
     <link rel="stylesheet" href="styles.css">
     
-    <link rel="icon" type="image/png" href="favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/png" href="img/favicon-48x48.png" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
@@ -15,10 +15,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+            publicKey: "R5YJWCsfa2GEtS2XS",
+            });
+        })();
+    </script>
 </head>
 <body>
 
-    <!-- Barre de navigation avec logo -->
+    <!-- Barre de navigation -->
     <header class="navbar">
         <div class="container">
             <div class="logo-slogan" onclick="refreshPage()">
@@ -39,21 +52,25 @@
 
     <!-- Section A Propos -->
     <section id="apropos" class="about-section">
-        <div class="about-container">
-            <img src="/img/photo-cesi.jpg" alt="Ma Photo" class="about-image">
-            <div class="about-content">
-                <h2>Bienvenue sur mon Portfolio !</h2>
-                <p>Étudiant en ingénierie informatique, passionné par la technologie et le développement. J'aime explorer de nouvelles idées et relever des défis.</p>
-                <ul class="skills-list">
-                    <li>🌟 Passionné par le développement web</li>
-                    <li>🔧 Compétences en programmation C et JavaScript</li>
-                    <li>💡 Créativité dans la résolution de problèmes</li>
-                    <li>📈 Toujours à l'écoute des nouvelles technologies</li>
-                </ul>
-                <a href="#projects" class="cta-button">Découvrez mes projets</a>
+    <div class="about-container">
+        <img src="/img/photo-cesi.jpg" alt="Ma Photo" class="about-image">
+        <div class="about-content">
+            <div class="console-container">
+                <span id="welcome-text"></span>
+                <div class="console-underscore" id="console">&#95;</div>
             </div>
+            <p>Étudiant en ingénierie informatique, passionné par la technologie et le développement. J'aime explorer de nouvelles idées et relever des défis.</p>
+            <ul class="skills-list">
+                <li>🌟 Passionné par le développement web</li>
+                <li>🔧 Compétences en programmation C et JavaScript</li>
+                <li>💡 Créativité dans la résolution de problèmes</li>
+                <li>📈 Toujours à l'écoute des nouvelles technologies</li>
+            </ul>
+            <a href="#projects" class="cta-button">Découvrez mes projets</a>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Section Projets -->
     <section id="projects" class="projets">
@@ -85,21 +102,61 @@
     </section>
 
     <!-- Section Contact -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <form id="contact-form">
-                <input type="text" placeholder="Votre nom" required>
-                <input type="email" placeholder="Votre email" required>
-                <textarea placeholder="Votre message" required></textarea>
-                <button type="submit" class="btn">Envoyer</button>
+    <section id="contact" class="contact-section">
+        <h2 class="contact-title">Contactez-moi</h2>
+        <div class="contact-column">
+            <div class="contact-info">
+                <h3 class="contact-coordonnee">Mes Coordonnées</h3>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="contact-coordonnee-span">timothe.fardella@viacesi.fr</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-map-marker-alt"></i>
+                    <span class="contact-coordonnee-span">Rouen, France</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="contact-coordonnee-span">06 14 86 27 39</span>
+                </div>
+                <div class="contact-item">
+                    <a class="linkedin-icon"   href="https://www.linkedin.com/in/timothefardella" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a class="github-icon" href="https://github.com/fardellatimothe" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a class="facebook-icon"   href="https://www.facebook.com/timothe.fardella" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <input type="text" id = "name" placeholder="Votre nom / Entreprise" required>
+                <input type="email" id = "mail" placeholder="Votre email" required>
+                <textarea class="contact-message" id="message" placeholder="Votre message" required></textarea>
+                <button type="submit" onclick="sendMail()">
+                    <a class="message-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+
+                    <span class="submit-title">Envoyer</span>
+                </button>
             </form>
         </div>
     </section>
     
+    
     <!-- Fleche back to top-->
     <div class="back-to-top" onclick="scrollToTop()">
         &#129045;
+    </div>
+
+    <div class='console-container'>
+        <span id='text'></span>
+        <div class='console-underscore' id='console'>
+            &#95;
+        </div>
     </div>
     
     <!-- Footer -->
@@ -108,8 +165,6 @@
             <p>&copy; 2024  Développé par TIMOTHÉ FARDELLA.</p>
         </div>
     </footer>
-
-    
 
     <script src="script.js"></script>
 </body>
