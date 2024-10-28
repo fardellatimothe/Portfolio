@@ -16,10 +16,70 @@
 }
 
 /* Style général */
-body {
+.main-body {
     background-color: var(--light-gray);
     color: var(--dark-gray);
 }
+
+/* En-tête */
+header {
+    background-color: #0073e6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
+
+header h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Style pour la page d'introduction */
+.intro-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-blue); /* Bleu */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 1000;
+    transition: opacity 2s ease-out;
+    opacity: 1;
+}
+
+.intro-page.hidden {
+    opacity: 0;
+    pointer-events: none; 
+}
+
+.main-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+
+/* Animation pour faire apparaître le texte */
+.fade-in {
+    opacity: 0; /* Commence invisible */
+    animation: fadeInEffect 1s ease-in forwards; /* 2s = durée, ease-in = effet, forwards = reste visible */
+}
+
+@keyframes fadeInEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
 
 /* Barre de navigation */
 .navbar {
@@ -85,125 +145,131 @@ body {
 }
 
 
-/* Section d'introduction */
-.about-container {
-    display: flex;
-    gap: 20px;
+/* Section de presentation */
+
+.about-section-horizontal {
+    justify-content: center;
     align-items: center;
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px 60px 60px 60px;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-.about-image {
-    border-radius: 50%;
+.about-container-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 40px 60px 40px 60px;
+    background-color: #fff;
+    max-width:  100%;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.about-photo {
+    flex-shrink: 0;
+}
+
+.about-image-round {
     width: 150px;
     height: 150px;
+    border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 4px solid #0073e6;
 }
 
-.about-content {
+.about-content-horizontal {
     flex: 1;
+    text-align: left;
 }
 
-.about-content p {
-    line-height: 1.6;
-    font-size: 1.1rem;
-    color: #555;
-}
-
-.skills-list {
-    list-style: none;
-    padding: 0;
-}
-
-.skills-list li {
-    font-size: 1.1rem;
-    color: #555;
-    padding-left: 20px;
-    position: relative;
-    margin-bottom: 8px;
-}
-
-.skills-list li:before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #0073e6;
-}
-
-/* Bouton CTA */
-.cta-button {
-    display: inline-block;
-    background-color: #0073e6;
-    color: #fff;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #005bb5;
-}
-
-/* Effet de Machine à Écrire */
 .console-container {
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
     font-weight: bold;
-    color: var(--dark-blue);
+    justify-content: center;
 }
 
 .console-underscore {
-    display: inline-block;
-    position: relative;
-    top: 0.15em;
-    margin-left: 0.1em;
-    animation: blink 1s infinite;
+    font-size: 2.5rem;
 }
 
-/* Animation de Clignotement */
-@keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
-    51.01%, 100% {
-        opacity: 0;
-    }
+#welcome-text {
+    font-size: 3rem;
+    font-weight: bold;
 }
 
-/* Section Globale */
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    background-color: #f4f6f8;
-    margin: 0;
+.about-presentation-title {
+    margin-bottom:10px;
+}
+
+.about-presentation-desc {
+    margin-top:20px;
+}
+
+.about-presentation h3 {
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.about-presentation p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+.skills-list-horizontal {
+    list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #0073e6;
+    font-weight: 600;
+    align-items: flex-start; /* Aligne les éléments à gauche (ou change pour center si besoin) */
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.skills-list-horizontal li {
+    background-color: #f0f8ff;
+    padding: 6px 12px;
+    border-radius: 5px;
 }
 
-/* En-tête */
-header {
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.cta-button-horizontal {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     background-color: #0073e6;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-header h1 {
-    color: #fff;
-    text-align: center;
-    font-size: 2rem;
+.cta-button-horizontal:hover {
+    background-color: #005bb5;
 }
+
 
 /* Titre Section A Propos */
 .about-section h2 {
@@ -440,34 +506,3 @@ footer p {
     animation: typing 3s steps(30, end), blink-caret 0.6s step-end infinite;
 }
 
-/*
-@import url(https://fonts.googleapis.com/css?family=Khula:700);
-body {
-  background: var(--light-gray);
-}
-.hidden {
-  opacity:0;
-}
-.console-container {
- 
-  font-family:"Roboto", Arial;
-  font-size:4em;
-  text-align:center;
-  height:200px;
-  width:600px;
-  display:block;
-  position:absolute;
-  color:white;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  margin:auto;
-}
-.console-underscore {
-   display:inline-block;
-  position:relative;
-  top:-0.14em;
-  left:10px;
-}
-*/

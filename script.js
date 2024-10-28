@@ -25,16 +25,17 @@ function sendMail() {
     }
 
     emailjs.send("service_wo1zwti", "template_16lknf9", parms)
-        .then(function() {
-            alert("Merci de m'avoir contacté !!");
-            document.getElementById("name").value = "";
-            document.getElementById("mail").value = "";
-            document.getElementById("message").value = "";
-        })
+    .then(function() {
+        alert("Merci de m'avoir contacté !!");
+        document.getElementById("name").value = "";
+        document.getElementById("mail").value = "";
+        document.getElementById("message").value = "";
+    })
 }
 
+
 document.addEventListener("DOMContentLoaded", function () {
-    const words = [ "Bienvenue sur mon Portfolio !", "Je m'appelle Timothé !", "Étudiant aujourd'hui, Ingénieur demain.", "Développement Web",];
+    const words = [ "Bienvenue sur mon Portfolio !", "Je m'appelle Timothé !", "Étudiant aujourd'hui, Ingénieur demain", "Développement Web","Optimiser le présent, créer l'avenir"];
     let wordIndex = 0;
     let letterIndex = 0;
     const speed = 120; // Vitesse de chaque lettre
@@ -63,4 +64,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     typeWriter();
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const introPage = document.getElementById("intro-page");
+    const mainContent = document.getElementById("main-content");
+
+    function hideIntro() {
+        introPage.classList.add("hidden");
+        setTimeout(() => {
+            introPage.style.display = "none";
+            mainContent.style.display = "block";
+            mainContent.style.opacity = 1;
+        }, 1000); // Assurez-vous que cela correspond au délai de la transition CSS
+    }
+
+    // Cacher l'introduction après 2 secondes
+    setTimeout(hideIntro, 2000);
+
+    // Cacher l'introduction si l'utilisateur scroll avant les 2 secondes
+    window.addEventListener("scroll", hideIntro, { once: true });
 });

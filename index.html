@@ -21,6 +21,7 @@
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
+    
     <script type="text/javascript">
         (function(){
             emailjs.init({
@@ -31,141 +32,168 @@
 </head>
 <body>
 
-    <!-- Barre de navigation -->
-    <header class="navbar">
-        <div class="container">
-            <div class="logo-slogan" onclick="refreshPage()">
-                <img src="/img/Logosite_page.png" alt="Logo" class="logo">
-                <h1 class="title-slogan">OPTIMISER LE PRÉSENT, CRÉER L'AVENIR.</h1>
-            </div>
-            <nav class="nav">
-                <ul class="nav-links">
-                    <li><a href="#apropos">À propos</a></li>
-                    <li><a href="#formation">Formation</a></li>
-                    <li><a href="#competences">Compétences</a></li>
-                    <li><a href="#projets">Projets</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Page d'introduction -->
+    <div id="intro-page" class="intro-page">
+        <h1 class="fade-in">Bienvenue sur mon Portfolio ! </h1>
+    </div>
 
-    <!-- Section A Propos -->
-    <section id="apropos" class="about-section">
-    <div class="about-container">
-        <img src="/img/photo-cesi.jpg" alt="Ma Photo" class="about-image">
-        <div class="about-content">
+    <main id="main-content" class="main-content"> 
+        <!-- Barre de navigation -->
+        <header class="navbar">
+            <div class="container">
+                <div class="logo-slogan" onclick="refreshPage()">
+                    <img src="/img/Logosite_page.png" alt="Logo" class="logo">
+                    <h1 class="title-slogan">OPTIMISER LE PRÉSENT, CRÉER L'AVENIR.</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#formation">Formation</a></li>
+                        <li><a href="#competences">Compétences</a></li>
+                        <li><a href="#projets">Projets</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Section Présentation -->
+        <section id="apropos" class="about-section-horizontal">
             <div class="console-container">
                 <span id="welcome-text"></span>
                 <div class="console-underscore" id="console">&#95;</div>
             </div>
-            <p>Étudiant en ingénierie informatique, passionné par la technologie et le développement. J'aime explorer de nouvelles idées et relever des défis.</p>
-            <ul class="skills-list">
-                <li>🌟 Passionné par le développement web</li>
-                <li>🔧 Compétences en programmation C et JavaScript</li>
-                <li>💡 Créativité dans la résolution de problèmes</li>
-                <li>📈 Toujours à l'écoute des nouvelles technologies</li>
-            </ul>
-            <a href="#projects" class="cta-button">Découvrez mes projets</a>
-        </div>
-    </div>
-</section>
-
-
-    <!-- Section Projets -->
-    <section id="projects" class="projets">
-        <div class="container">
-            <h2>Mes Projets</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Projet 1</h3>
-                    <p>Description du projet.</p>
+            <div class="about-container-horizontal">
+                <div class="about-photo">
+                    <img src="/img/photo-cesi.jpg" alt="Ma Photo" class="about-image-round">
                 </div>
-                <div class="project-card">
-                    <h3>Projet 2</h3>
-                    <p>Description du projet.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Projet 3</h3>
-                    <p>Description du projet.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section À propos -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>À propos de moi</h2>
-            <p>Je suis un étudiant en ingénierie passionné par le développement web et les nouvelles technologies. J'aime apprendre de nouvelles compétences pour me perfectionner dans mon domaine.</p>
-        </div>
-    </section>
-
-    <!-- Section Contact -->
-    <section id="contact" class="contact-section">
-        <h2 class="contact-title">Contactez-moi</h2>
-        <div class="contact-column">
-            <div class="contact-info">
-                <h3 class="contact-coordonnee">Mes Coordonnées</h3>
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span class="contact-coordonnee-span">timothe.fardella@viacesi.fr</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-map-marker-alt"></i>
-                    <span class="contact-coordonnee-span">Rouen, France</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span class="contact-coordonnee-span">06 14 86 27 39</span>
-                </div>
-                <div class="contact-item">
-                    <a class="linkedin-icon"   href="https://www.linkedin.com/in/timothefardella" target="_blank">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                    <a class="github-icon" href="https://github.com/fardellatimothe" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a class="facebook-icon"   href="https://www.facebook.com/timothe.fardella" target="_blank">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
+                <div class="about-content-horizontal">
+                    <div class="about-presentation">
+                        <div class="about-presentation-title">
+                            <h3>BONJOUR,</h3>
+                        <h3>BIENVENUE sur mon PORTFOLIO</h3>
+                        </div>
+                        <div class="about-presentation-desc">
+                            <p>
+                                Je m'appelle Timothé FARDELLA et je suis actuellement étudiant en ingénierie informatique, avec un grand intérêt pour la technologie et la programmation.
+                                Mon expérience m'a permis d'acquérir des compétences solides en codage et une curiosité constante pour explorer de nouvelles idées et résoudre des défis techniques.
+                            </p>
+                            <p>
+                                Ce site présente mes projets, compétences et aspirations futures.
+                                Vous êtes invités à découvrir mes travaux où je mets en avant l'innovation et la créativité dans le développement logiciel.
+                            </p>
+                            <p>
+                                N'hésitez pas à consulter mes réalisations et à me contacter pour échanger des idées ou discuter de possibles collaborations.
+                                Merci de votre visite !
+                            </p>
+                            <ul class="skills-list-horizontal">
+                                <li>🌟 Passionné par le développement web</li>
+                                <li>🔧 Compétences en programmation C et JavaScript</li>
+                                <li>💡 Créativité dans la résolution de problèmes</li>
+                                <li>📈 Toujours à l'écoute des nouvelles technologies</li>
+                            </ul>
+                        </div>
+                    </div>
+                        
+                    <div class="button-group">
+                        <a href="/CV.Timothé.FARDELLA.pdf" download class="cta-button-horizontal">Télécharger mon CV</a>
+                        <a href="#contact" class="cta-button-horizontal">Contactez-moi</a>
+                    </div>
                 </div>
             </div>
-            <form id="contact-form" class="contact-form">
-                <input type="text" id = "name" placeholder="Votre nom / Entreprise" required>
-                <input type="email" id = "mail" placeholder="Votre email" required>
-                <textarea class="contact-message" id="message" placeholder="Votre message" required></textarea>
-                <button type="submit" onclick="sendMail()">
-                    <a class="message-icon">
-                        <i class="fa-regular fa-envelope"></i>
-                    </a>
+        </section>
+        
+        
+        
 
-                    <span class="submit-title">Envoyer</span>
-                </button>
-            </form>
-        </div>
-    </section>
-    
-    
-    <!-- Fleche back to top-->
-    <div class="back-to-top" onclick="scrollToTop()">
-        &#129045;
-    </div>
 
-    <div class='console-container'>
-        <span id='text'></span>
-        <div class='console-underscore' id='console'>
-            &#95;
-        </div>
-    </div>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024  Développé par TIMOTHÉ FARDELLA.</p>
-        </div>
-    </footer>
+        <!-- Section Projets -->
+        <section id="projects" class="projets">
+            <div class="container">
+                <h2>Mes Projets</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>Projet 1</h3>
+                        <p>Description du projet.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Projet 2</h3>
+                        <p>Description du projet.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Projet 3</h3>
+                        <p>Description du projet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Section À propos -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>À propos de moi</h2>
+                <p>Je suis un étudiant en ingénierie passionné par le développement web et les nouvelles technologies. J'aime apprendre de nouvelles compétences pour me perfectionner dans mon domaine.</p>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="contact-section">
+            <h2 class="contact-title">Contactez-moi</h2>
+            <div class="contact-column">
+                <div class="contact-info">
+                    <h3 class="contact-coordonnee">Mes Coordonnées</h3>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="contact-coordonnee-span">timothe.fardella@viacesi.fr</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-map-marker-alt"></i>
+                        <span class="contact-coordonnee-span">Rouen, France</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span class="contact-coordonnee-span">06 14 86 27 39</span>
+                    </div>
+                    <div class="contact-item">
+                        <a class="linkedin-icon"   href="https://www.linkedin.com/in/timothefardella" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a class="github-icon" href="https://github.com/fardellatimothe" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="facebook-icon"   href="https://www.facebook.com/timothe.fardella" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" id = "name" placeholder="Votre nom / Entreprise" required>
+                    <input type="email" id = "mail" placeholder="Votre email" required>
+                    <textarea class="contact-message" id="message" placeholder="Votre message" required></textarea>
+                    <button type="submit" onclick="sendMail()">
+                        <a class="message-icon">
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                        <span class="submit-title">Envoyer</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+        
+        
+        <!-- Fleche back to top-->
+        <div class="back-to-top" onclick="scrollToTop()">
+            &#129045;
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024  Développé par TIMOTHÉ FARDELLA.</p>
+            </div>
+        </footer>
+
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
