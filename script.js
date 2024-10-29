@@ -1,8 +1,6 @@
-// Fonction pour rafraîchir la page
 function refreshPage() {
-    location.replace();
+    location.replace(location.pathname + location.search);
 }
-
 
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -17,20 +15,90 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
 function sendMail() {
     var parms = {
         name: document.getElementById("name").value,
-        mail : document.getElementById("mail").value,
-        message : document.getElementById("message").value,
-    }
+        mail: document.getElementById("mail").value,
+        message: document.getElementById("message").value,
+    };
+
+    // Afficher la pop-up de chargement
+    var loadingPopup = document.createElement("div");
+    loadingPopup.style.position = "fixed";
+    loadingPopup.style.top = "20px";  
+    loadingPopup.style.right = "20px"; 
+    loadingPopup.style.padding = "20px";
+    loadingPopup.style.backgroundColor = "rgba(200, 200, 200, 0.9)";
+    loadingPopup.style.color = "white";
+    loadingPopup.style.borderRadius = "5px";
+    loadingPopup.innerText = "Envoi en cours, veuillez patienter...";
+    document.body.appendChild(loadingPopup);
 
     emailjs.send("service_wo1zwti", "template_16lknf9", parms)
     .then(function() {
-        alert("Merci de m'avoir contacté !!");
+        // Supprimer la pop-up de chargement
+        document.body.removeChild(loadingPopup);
+        
+        // Pop-up de confirmation
+        var successPopup = document.createElement("div");
+        successPopup.style.position = "fixed";
+        successPopup.style.top = "20px";  
+        successPopup.style.right = "20px"; 
+        successPopup.style.padding = "20px";
+        successPopup.style.backgroundColor = "rgba(0, 128, 0, 0.9)";
+        successPopup.style.color = "white";
+        successPopup.style.borderRadius = "5px";
+        successPopup.innerText = "Votre message a été envoyé avec succès!";
+        document.body.appendChild(successPopup);
+
+        // Supprimer la pop-up de succès après 3 secondes
+        setTimeout(function() {
+            document.body.removeChild(successPopup);
+        }, 3000);
+
+        // Réinitialiser les champs
         document.getElementById("name").value = "";
         document.getElementById("mail").value = "";
         document.getElementById("message").value = "";
-    })
+    }, function(error) {
+        // Supprimer la pop-up de chargement
+        document.body.removeChild(loadingPopup);
+        
+        // Pop-up d'erreur
+        var errorPopup = document.createElement("div");
+        errorPopup.style.position = "fixed";
+        errorPopup.style.top = "20px";  
+        errorPopup.style.right = "20px"; 
+        errorPopup.style.padding = "20px";
+        errorPopup.style.backgroundColor = "rgba(255, 0, 0, 0.8)";
+        errorPopup.style.color = "white";
+        errorPopup.style.borderRadius = "5px";
+        errorPopup.innerText = "Une erreur est survenue, veuillez réessayer plus tard.";
+        document.body.appendChild(errorPopup);
+
+        // Supprimer la pop-up d'erreur après 3 secondes
+        setTimeout(function() {
+            document.body.removeChild(errorPopup);
+        }, 3000);
+
+        console.error("Erreur d'envoi:", error);
+    });
+}
+
+// Fonction pour afficher une popup
+function showPopup(message) {
+    const popup = document.createElement("div");
+    popup.classList.add("popup");
+    popup.innerText = message;
+
+    // Ajoute la popup au corps du document
+    document.body.appendChild(popup);
+
+    // Retire la popup après 3 secondes
+    setTimeout(() => {
+        popup.remove();
+    }, 3000);
 }
 
 
@@ -82,7 +150,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Cacher l'introduction après 2 secondes
     setTimeout(hideIntro, 2000);
+});
 
-    // Cacher l'introduction si l'utilisateur scroll avant les 2 secondes
-    window.addEventListener("scroll", hideIntro, { once: true });
+document.addEventListener("DOMContentLoaded", function () {
+    const skillsSection = document.querySelector(".skills-section");
+    const progressBars = document.querySelectorAll(".progress");
+
+    // Fonction pour lancer l'animation des barres de progression
+    function animateProgressBars() {
+        progressBars.forEach(bar => {
+            const finalWidth = bar.getAttribute("data-progress"); // Récupère la valeur sans le % pour éviter 'null'
+            bar.style.width = finalWidth + "%"; // Définit la largeur cible pour l'animation
+            
+            // Affiche progressivement le pourcentage en attendant que l'animation soit terminée
+            bar.textContent = finalWidth + "%";
+        });
+    }
+
+    // Création d'un observateur pour la section des compétences
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateProgressBars();
+                observer.unobserve(skillsSection); // Stoppe l'observation après l'animation
+            }
+        });
+    }, { threshold: 0.5 }); // Lance l'animation quand 50% de la section est visible
+
+    observer.observe(skillsSection);
 });
