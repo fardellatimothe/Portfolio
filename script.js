@@ -179,3 +179,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(skillsSection);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const marquee = document.getElementById("marquee");
+    const marqueeContent = marquee.querySelector(".marquee-content");
+    const clone = marqueeContent.cloneNode(true);
+    marquee.appendChild(clone);
+
+    let speed = 1.5; // Ajustez la vitesse ici
+    let scrollPosition = 0;
+    let animationActive = true; // Variable pour contrôler l'animation
+
+    function scrollMarquee() {
+        if (animationActive) {
+            scrollPosition -= speed;
+            if (Math.abs(scrollPosition) >= marqueeContent.offsetWidth) {
+                scrollPosition = 0;
+            }
+            marqueeContent.style.transform = `translateX(${scrollPosition}px)`;
+            clone.style.transform = `translateX(${scrollPosition}px)`;
+        }
+        requestAnimationFrame(scrollMarquee);
+    }
+
+    // Démarrer l'animation
+    scrollMarquee();
+
+    // Arrêter l'animation lors du survol d'un logo
+    marquee.addEventListener("mouseenter", () => {
+        animationActive = false;
+    });
+
+    marquee.addEventListener("mouseleave", () => {
+        animationActive = true;
+    });
+});
+
+

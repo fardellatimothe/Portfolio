@@ -307,13 +307,13 @@ header h1 {
 }
 
 
-/* Styles pour la section compétences */
+/* Section compétences */
 .skills-section {
     padding: 60px 20px;
     background-color: #F3F4F6; 
 }
 
-.section-title {
+.section-skills-title {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
@@ -368,103 +368,144 @@ header h1 {
     transition: width 1s ease-in-out;
 }
 
-/* Conteneur principal */
+/* Logo */
 .marquee {
     overflow: hidden;
-    background: linear-gradient(90deg, #f4f9fc 0%, #dce4f0 100%);
+    white-space: nowrap;
+    background-color: #e3f2fd;
     padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 60px;
+    margin: 75px 40px 75px 40px;
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 45px;
 }
 
-/* Contenu défilant avec une animation continue */
 .marquee-content {
     display: flex;
-    animation: scroll 30s linear infinite;
-    transition: animation-play-state 0.3s ease;
-    width: max-content; /* Permet de contenir la duplication sans ligne de rupture */
 }
 
-/* Case pour chaque logo */
 .logo-box {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 35px;
-    padding: 15px;
-    width: 120px;
+    width: 120px; /* Taille uniforme pour toutes les boîtes */
     height: 120px;
-    border: 2px solid #005fa3;
+    background-color: #ffffff;
+    border: 2px solid #90caf9;
     border-radius: 10px;
-    background: #e1ecf7;
-    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin:0 20px;
 }
 
-/* Style des icônes */
-.logo-box i {
-    font-size: 3rem;
-    color: #005fa3;
-}
-
-/* Nom du langage */
-.logo-box span {
-    margin-top: 8px;
-    font-size: 1rem;
-    color: #003c6b;
-    font-weight: bold;
-}
-
-/* Animation de défilement en continu */
-@keyframes scroll {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-50%); /* Décale de 50% pour afficher la duplication */
-    }
-}
-
-/* Effet au survol */
 .logo-box:hover {
-    transform: scale(1.1);
-    background: #d3e8ff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Arrêt de l'animation au survol */
-.marquee-content:hover {
+.logo-box img {
+    width: 60px; /* Taille fixe pour chaque logo */
+    height: auto; /* Maintient les proportions */
+    margin-bottom: 8px;
+}
+
+.logo-box span {
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #1565c0;
+    text-align: center;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee:hover .marquee-content {
     animation-play-state: paused;
 }
 
 
 /* Section projets */
-.projects {
-    padding: 50px 20px;
+
+#projects {
+    padding: 3rem 1rem;
     text-align: center;
+    background-color: #f9f9f9;
+    padding-bottom: 80px;
 }
 
-.project-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+.section-project-title {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 75px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    max-width: 1250px;
+    margin: 0 auto;
 }
 
 .project-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    margin: 20px 40px 20px 40px;
 }
 
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
 
-/* Section À propos */
-.about {
-    padding: 50px 20px;
-    background-color: var(--light-gray);
-    text-align: center;
+.project-image {
+    height: 180px;
+    width: 100%;
+    background-color: #e1e4e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image i {
+    font-size: 3rem;
+    color: #007acc;
+}
+
+.project-content {
+    padding: 1.5rem;
+    text-align: left;
+    width: 100%;
+}
+
+.project-content h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    color: #666;
 }
 
 
@@ -597,7 +638,6 @@ header h1 {
 .contact-form button:active {
     background-color: var(--dark-gray);
 }
-
 
 /* Footer */
 footer {

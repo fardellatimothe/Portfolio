@@ -50,7 +50,7 @@
                         <li><a href="#apropos">À propos</a></li>
                         <li><a href="#formation">Formation</a></li>
                         <li><a href="#skills">Compétences</a></li>
-                        <li><a href="#projets">Projets</a></li>
+                        <li><a href="#projects">Projets</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -106,7 +106,7 @@
         
         <!--Section Compétences-->
         <section id="skills" class="skills-section">
-            <h2 class="section-title">Compétences</h2>
+            <h2 class="section-skills-title">Compétences</h2>
             <div class="skills-container">
                 <div class="skill">
                     <span class="skill-name">  <i class="fa-solid fa-network-wired"></i>  Gestion de Projets</span>
@@ -151,91 +151,108 @@
                     </div>
                 </div>
             </div>
-            <div class="marquee">
+            <div id="marquee" class="marquee">
                 <div class="marquee-content">
+                    <!-- Python -->
                     <div class="logo-box">
-                        <i class="fab fa-python"></i>
+                        <img src="/logo/python.svg" alt="Python logo" />
                         <span>Python</span>
                     </div>
+                    <!-- Pack Office -->
                     <div class="logo-box">
-                        <i class="fab fa-js-square"></i>
+                        <img src="/logo/microsoftoffice.svg" alt="Pack office logo" />
+                        <span>Pack Office</span>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="logo-box">
+                        <img src="/logo/javascript.svg" alt="JavaScript logo" />
                         <span>JavaScript</span>
                     </div>
+                    <!-- HTML -->
                     <div class="logo-box">
-                        <i class="fab fa-html5"></i>
+                        <img src="/logo/html.svg" alt="HTML logo" />
                         <span>HTML</span>
                     </div>
+                    <!-- Git -->
                     <div class="logo-box">
-                        <i class="fab fa-css3-alt"></i>
+                        <img src="/logo/git.svg" alt="Git logo" />
+                        <span>Git</span>
+                    </div>
+                    <!-- CSS -->
+                    <div class="logo-box">
+                        <img src="/logo/css.svg" alt="CSS logo" />
                         <span>CSS</span>
                     </div>
+                    <!-- C -->
                     <div class="logo-box">
-                        <i class="fab fa-cuttlefish"></i>
+                        <img src="/logo/c.svg" alt="C logo" />
                         <span>C</span>
                     </div>
+                    <!-- MySQL -->
                     <div class="logo-box">
-                        <i class="fab fa-cuttlefish"></i>
+                        <img src="/logo/mysql.svg" alt="MySQL logo" />
+                        <span>MySQL</span>
+                    </div>
+                    <!-- C++ -->
+                    <div class="logo-box">
+                        <img src="/logo/c++.svg" alt="C++ logo" />
                         <span>C++</span>
                     </div>
-                    <!-- Ajouter plus d’icônes si nécessaire -->
-                    
-                    <!-- Duplique le contenu pour un défilement continu -->
+                    <!-- Arduino -->
                     <div class="logo-box">
-                        <i class="fab fa-python"></i>
-                        <span>Python</span>
+                        <img src="/logo/arduino.svg" alt="Arduino logo" />
+                        <span>Arduino</span>
                     </div>
+                    <!-- GitHub -->
                     <div class="logo-box">
-                        <i class="fab fa-js-square"></i>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="logo-box">
-                        <i class="fab fa-html5"></i>
-                        <span>HTML</span>
-                    </div>
-                    <div class="logo-box">
-                        <i class="fab fa-css3-alt"></i>
-                        <span>CSS</span>
-                    </div>
-                    <div class="logo-box">
-                        <i class="fab fa-cuttlefish"></i>
-                        <span>C</span>
-                    </div>
-                    <div class="logo-box">
-                        <i class="fab fa-cuttlefish"></i>
-                        <span>C++</span>
-                    </div>
+                        <img src="/logo/github.svg" alt="Github logo" />
+                        <span>GitHub</span>
+                    </div>  
                 </div>
             </div>
         </section>
         
 
-
         <!-- Section Projets -->
-        <section id="projects" class="projets">
-            <div class="container">
-                <h2>Mes Projets</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <h3>Projet 1</h3>
-                        <p>Description du projet.</p>
+        <section id="projects">
+            <h2 class="section-project-title">Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                    <div class="project-card">
-                        <h3>Projet 2</h3>
-                        <p>Description du projet.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Projet 3</h3>
-                        <p>Description du projet.</p>
+                    <div class="project-content">
+                        <h3>Plateforme E-commerce</h3>
+                        <p>Une plateforme e-commerce complète avec panier d'achat et paiement en ligne.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Section À propos -->
-        <section id="about" class="about">
-            <div class="container">
-                <h2>À propos de moi</h2>
-                <p>Je suis un étudiant en ingénierie passionné par le développement web et les nouvelles technologies. J'aime apprendre de nouvelles compétences pour me perfectionner dans mon domaine.</p>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Application Mobile</h3>
+                        <p>Application mobile cross-platform développée avec React Native.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Gestion de Base de Données</h3>
+                        <p>Développement d'un système de gestion de bases de données pour une entreprise.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Tableau de Bord Analytique</h3>
+                        <p>Création d'un tableau de bord interactif pour la visualisation des données de vente.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -288,6 +305,8 @@
         <div class="back-to-top" onclick="scrollToTop()">
             &#129045;
         </div>
+
+        
         
         <!-- Footer -->
         <footer class="footer">
