@@ -53,10 +53,9 @@
 }
 
 
-/* Animation pour faire apparaître le texte */
 .fade-in {
-    opacity: 0; /* Commence invisible */
-    animation: fadeInEffect 1s ease-in forwards; /* 2s = durée, ease-in = effet, forwards = reste visible */
+    opacity: 0; 
+    animation: fadeInEffect 1s ease-in forwards;
 }
 
 @keyframes fadeInEffect {
@@ -68,8 +67,21 @@
     }
 }
 
+/* Adaptation aux petits écrans */
+@media (max-width: 768px) {
+    .intro-page {
+        font-size: 1.5rem; 
+        padding: 20px; 
+        text-align: center;
+    }
 
-/* En-tête */
+    .intro-page h1 {
+        font-size: 1.8rem; 
+    }
+}
+
+
+/* Barre de navigation */
 header {
     background-color: var(--light-blue);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -82,7 +94,6 @@ header h1 {
     font-size: 2rem;
 }
 
-/* Barre de navigation */
 .navbar {
     background-color: var(--light-gray);
     top: 0;
@@ -148,9 +159,31 @@ header h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 2px 2px 15px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        padding: 10px 20px;
+        gap: 15px;
+        border-radius: 50px;
+    }
+
+    .title-slogan {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .nav-links li {
+        margin: 5px 0;
+    }
+}
 
 /* Section de presentation */
-
 .about-section-horizontal {
     justify-content: center;
     align-items: center;
@@ -283,7 +316,7 @@ header h1 {
 }
 
 .features-list li:hover i {
-    color: #6e6e6e; /* Couleur de l’icône plus lumineuse au survol */
+    color: #6e6e6e;
 }
 
 .button-group {
@@ -308,6 +341,77 @@ header h1 {
 .cta-button-horizontal:hover {
     background-color: #005bb5;
 }
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    .about-container-horizontal {
+        flex-direction: column; /* Passage en colonne */
+        align-items: center; /* Centre les éléments */
+        padding: 20px; /* Réduit le padding */
+        gap: 20px; /* Espace entre les éléments */
+    }
+
+    .about-photo {
+        margin-bottom: 20px; /* Espace sous la photo */
+    }
+
+    .about-image-round {
+        width: 130px; /* Taille réduite de la photo */
+        height: 130px;
+    }
+
+    .about-content-horizontal {
+        text-align: center; /* Centre le texte */
+    }
+
+    .console-container {
+        font-size: 1.5rem;
+        margin-bottom: 15px; /* Réduit l'espacement en bas */
+    }
+
+    .about-presentation-title h3 {
+        font-size: 1.4rem; /* Taille réduite pour le titre */
+    }
+
+    .features-list {
+        grid-template-columns: 1fr; /* Affiche la liste en colonne unique */
+        gap: 10px; /* Espace réduit entre les éléments */
+    }
+
+    .button-group {
+        flex-direction: column; /* Place les boutons en colonne */
+        gap: 10px; /* Espace entre les boutons */
+    }
+
+    .button-group a {
+        width: 100%; /* Boutons en pleine largeur */
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container-horizontal {
+        padding: 15px; /* Réduit davantage le padding */
+    }
+
+    .about-image-round {
+        width: 100px; /* Taille encore réduite pour les très petits écrans */
+        height: 100px;
+    }
+
+    #welcome-text {
+        font-size: 1.3rem; /* Taille de texte réduite pour le message de bienvenue */
+    }
+
+    .about-presentation-title h3 {
+        font-size: 1.2rem; /* Réduit la taille du titre */
+    }
+
+    .about-presentation-desc {
+        font-size: 0.9rem; /* Réduit la taille du texte de description */
+    }
+}
+
 
 
 /* Section compétences */
@@ -439,8 +543,7 @@ header h1 {
 }
 
 
-/* Section projets */
-
+/* Section Projets */
 #projects {
     padding: 3rem 1rem;
     text-align: center;
@@ -454,9 +557,10 @@ header h1 {
     margin-bottom: 50px;
 }
 
+
 .projects-grid {
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
     gap: 40px;
     max-width: 1250px;
     margin: 0 auto;
@@ -470,8 +574,7 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 20px;
-    margin: 20px 40px 20px 40px;
+    margin: 20px;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -532,6 +635,49 @@ header h1 {
 }
 
 
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .section-project-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .project-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .project-content p {
+        font-size: 0.9rem;
+    }
+    
+    .project-github-link {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-image {
+        height: 150px;
+    }
+    
+    .project-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .project-content p {
+        font-size: 0.85rem;
+    }
+    
+    .project-github-link {
+        font-size: 0.9rem;
+    }
+}
+
+
 /* Section de contact */
 .contact-section {
     padding: 60px 20px;
@@ -543,21 +689,21 @@ header h1 {
     font-weight: bold;
     color: #1e3a8a; 
     text-align: center;
-    margin-bottom: 30px; 
+    margin-bottom: 50px; 
 }
 
 .contact-column {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    max-width: 1200px;
+    gap: 100px;
+    max-width: 1350px;
     margin: 0 auto;
 }
 
 @media(min-width: 768px) {
     .contact-column {
         flex-direction: row;
-        align-items: flex-start;
+        align-items: stretch;
     }
 }
 
@@ -571,6 +717,7 @@ header h1 {
     flex-direction: column;
     gap: 15px;
     text-align: center;
+    max-height: 100%;
 }
 
 .contact-coordonnee {
@@ -584,6 +731,7 @@ header h1 {
     gap: 10px;
     font-size: 1.1rem;
     color: var(--dark-gray); 
+    margin-left:10px;
 }
 
 .contact-item i {
@@ -596,6 +744,26 @@ header h1 {
 }
 
 .contact-item a:hover i {
+    color: var(--dark-gray);
+    transform: scale(1.2);
+}
+
+.contact-sociallink {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.1rem;
+    color: var(--dark-gray); 
+    margin-left:10px;
+}
+
+.contact-sociallink i {
+    font-size: 2.3rem;
+    color: var(--dark-blue);
+    margin-top: 15px;
+}
+
+.contact-sociallink a:hover i {
     color: var(--dark-gray);
     transform: scale(1.2);
 }
@@ -616,9 +784,14 @@ header h1 {
     font-size: 1rem;
 }
 
+.contact-form textarea {
+    max-height:100%;
+}
+
 .contact-message {
     height: 110px;
     resize: none;
+    flex:1;
 }
 
 .contact-form button {
@@ -639,6 +812,27 @@ header h1 {
 .contact-form button:active {
     background-color: var(--dark-gray);
 }
+
+.contact-cvbutton {
+    display: flex;
+    justify-content: center; /* Centre le bouton */
+    margin-top: 25px; /* Espacement au-dessus du bouton */
+}
+
+.cvbutton {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #0073e6; /* Couleur du bouton */
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cvbutton:hover {
+    background-color: #005bb5; /* Couleur du bouton au survol */
+}
+
 
 @media (max-width: 768px) {
     .contact-info,
