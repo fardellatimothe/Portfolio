@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sur la Route de l'Ingenieurie</title>
+    <title>Timothé - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     
-    <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
-    <link rel="shortcut icon" href="/img/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
-    <link rel="manifest" href="/img/site.webmanifest" />
+    <link rel="icon" type="image/png" href="https://fardellatimothe.github.io/Portfolio/img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="https://fardellatimothe.github.io/Portfolio/img/favicon.svg" />
+    <link rel="shortcut icon" href="https://fardellatimothe.github.io/Portfolio/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://fardellatimothe.github.io/Portfolio/img/apple-touch-icon.png" />
+    <link rel="manifest" href="https://fardellatimothe.github.io/Portfolio/img/site.webmanifest" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,9 +95,8 @@
                             </ul>
                         </div>
                     </div>
-                        
                     <div class="button-group">
-                        <a href="/CV.Timothé.FARDELLA.pdf" download class="cta-button-horizontal">Résumé</a>
+                        <a onclick="pdf()" class="cta-button-horizontal">Résumé</a>
                         <a href="#contact" class="cta-button-horizontal">Contactez-moi</a>
                     </div>
                 </div>
@@ -219,20 +218,20 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fa-solid fa-tachograph-digital"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Plateforme E-commerce</h3>
-                        <p>Une plateforme e-commerce complète avec panier d'achat et paiement en ligne.</p>
+                        <h3>Strongbox 3000</h3>
+                        <p>Prototype de coffre-fort intelligent développé avec Arduino, intégrant un système d'authentification multi-niveaux et des mécanismes de sécurité avancés.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fa-solid fa-user-secret"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Application Mobile</h3>
-                        <p>Application mobile cross-platform développée avec React Native.</p>
+                        <h3>Escape No Game</h3>
+                        <p>Solution de communication discrète, développée en Python et utilisant des ondes sonores à haute fréquence et des filtres numériques.</p>
                     </div>
                 </div>
                 <div class="project-card">
@@ -241,19 +240,23 @@
                     </div>
                     <div class="project-content">
                         <h3>Gestion de Base de Données</h3>
-                        <p>Développement d'un système de gestion de bases de données pour une entreprise.</p>
+                        <p>Développement d'une base de données relationnelle avec MySQL pour centraliser les données sur la qualité de l'air en France.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fa-solid fa-water"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Tableau de Bord Analytique</h3>
-                        <p>Création d'un tableau de bord interactif pour la visualisation des données de vente.</p>
+                        <h3>Worldwide Weather Watcher</h3>
+                        <p>Création d'une station météo embarquée pour surveiller des paramètres climatiques, utilisant Arduino, un système de stockage et divers capteurs.</p>
                     </div>
                 </div>
             </div>
+            <p class="project-github-link">
+                Vous pouvez retrouver mes autres projets personnels sur mon 
+                <a href="https://github.com/fardellatimothe" target="_blank">GitHub</a>.
+            </p>
         </section>
 
         <!-- Section Contact -->
@@ -290,7 +293,7 @@
                     <input type="text" id = "name" placeholder="Votre nom / Entreprise" required>
                     <input type="email" id = "mail" placeholder="Votre email" required>
                     <textarea class="contact-message" id="message" placeholder="Votre message" required></textarea>
-                    <button type="submit" class="submit-button">
+                    <button type="button" class="submit-button" onclick="sendMail()">
                         <a class="message-icon">
                             <i class="fa-regular fa-envelope"></i>
                         </a>

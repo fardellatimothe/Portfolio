@@ -86,7 +86,7 @@ function sendMail() {
     });
 }
 
-// Fonction pour afficher une popup
+// Fonction pour afficher la popup
 function showPopup(message) {
     const popup = document.createElement("div");
     popup.classList.add("popup");
@@ -101,7 +101,7 @@ function showPopup(message) {
     }, 3000);
 }
 
-
+// Titre Machine à Ecrire
 document.addEventListener("DOMContentLoaded", function () {
     const words = [ "Bienvenue sur mon Portfolio !", "Je m'appelle Timothé !", "Étudiant aujourd'hui, Ingénieur demain", "Développement Web","Optimiser le présent, créer l'avenir"];
     let wordIndex = 0;
@@ -130,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(typeWriter, speed);
         }
     }
-    
     typeWriter();
 });
 
@@ -175,18 +174,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 observer.unobserve(skillsSection); // Stoppe l'observation après l'animation
             }
         });
-    }, { threshold: 0.5 }); // Lance l'animation quand 50% de la section est visible
+    }, { threshold: 0.4 }); // Lance l'animation quand 50% de la section est visible
 
     observer.observe(skillsSection);
 });
 
+// Compétences Barre de défilement
 document.addEventListener("DOMContentLoaded", function () {
     const marquee = document.getElementById("marquee");
     const marqueeContent = marquee.querySelector(".marquee-content");
     const clone = marqueeContent.cloneNode(true);
     marquee.appendChild(clone);
 
-    let speed = 1.5; // Ajustez la vitesse ici
+    let speed = 1.3; // Ajustez la vitesse ici
     let scrollPosition = 0;
     let animationActive = true; // Variable pour contrôler l'animation
 
@@ -214,5 +214,41 @@ document.addEventListener("DOMContentLoaded", function () {
         animationActive = true;
     });
 });
+
+// Cartes de projet animation
+const projectCards = document.querySelectorAll('.project-card');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target); // Arrête d'observer une fois l'animation effectuée
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+// Observer chaque carte
+projectCards.forEach((card) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(50px)';
+    observer.observe(card);
+});
+
+function pdf() {
+    const url = '/Timothé_FARDELLA_CV.pdf'; // Remplacez par le chemin de votre PDF
+
+    window.open(url, '_blank');
+
+    // Créer un lien pour le téléchargement
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = ''; // Nom du fichier (laisser vide pour utiliser le nom original)
+    document.body.appendChild(link);
+    link.click(); // Simuler le clic pour le téléchargement
+    document.body.removeChild(link); // Retirer le lien
+}
 
 
