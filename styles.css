@@ -132,7 +132,7 @@ header h1 {
 
 .title-slogan {
     font-size: 22px;
-    color: var(--dark-gray); /* Assurez-vous d'avoir défini cette variable */
+    color: var(--dark-blue); /* Assurez-vous d'avoir défini cette variable */
 }
 
 .nav-links {
@@ -233,7 +233,7 @@ header h1 {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-weight: bold;
     justify-content: center;
 }
@@ -619,7 +619,7 @@ header h1 {
 .project-github-link {
     margin-top: 20px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: #555;
 }
 
@@ -794,6 +794,10 @@ header h1 {
     flex:1;
 }
 
+.message-icon {
+    margin-right:5px;
+}
+
 .contact-form button {
     padding: 12px 20px;
     background-color: #0073e6;
@@ -803,6 +807,7 @@ header h1 {
     font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s;
+    align-items: center;
 }
 
 .contact-form button:hover {
