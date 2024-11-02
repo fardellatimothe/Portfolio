@@ -378,7 +378,7 @@ header h1 {
     }
 
     .console-underscore {
-        font-size: 1.3em;
+        font-size: 1em;
     }
 
     .about-presentation-title h3 {
@@ -542,6 +542,10 @@ header h1 {
     text-align: center;
 }
 
+.marquee:hover .marquee-content {
+    animation-play-state: paused;
+}
+
 @keyframes scroll {
     from {
         transform: translateX(0);
@@ -551,9 +555,12 @@ header h1 {
     }
 }
 
-.marquee:hover .marquee-content {
-    animation-play-state: paused;
+@media (max-width: 768px) {
+    .marquee {
+        margin: 75px 20px 75px 20px;
+    }
 }
+
 
 
 /* Section Formation */
