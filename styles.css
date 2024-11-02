@@ -67,7 +67,7 @@
     }
 }
 
-/* Adaptation aux petits écrans */
+
 @media (max-width: 768px) {
     .intro-page {
         font-size: 1.5rem; 
@@ -159,7 +159,7 @@ header h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 2px 2px 15px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .navbar .container {
         flex-direction: column;
         padding: 10px 20px;
@@ -365,8 +365,12 @@ header h1 {
     }
 
     .console-container {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin-bottom: 15px; /* Réduit l'espacement en bas */
+    }
+
+    .console-underscore {
+        font-size: 1.3em;
     }
 
     .about-presentation-title h3 {
@@ -820,23 +824,38 @@ header h1 {
 
 .contact-cvbutton {
     display: flex;
-    justify-content: center; /* Centre le bouton */
-    margin-top: 25px; /* Espacement au-dessus du bouton */
+    justify-content: center;
+    margin-top: 25px;
 }
 
 .cvbutton {
-    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Espace entre l'icône et le texte */
     padding: 10px 20px;
+    background-color: #0073e6;
     border-radius: 5px;
-    background-color: #0073e6; /* Couleur du bouton */
-    color: #fff;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    align-items: center;
 }
 
 .cvbutton:hover {
-    background-color: #005bb5; /* Couleur du bouton au survol */
+    background-color: #005bb5;
+    transform: translateY(-2px);
 }
+
+.cvbutton i {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.cvbutton a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 
 
 @media (max-width: 768px) {
@@ -902,6 +921,10 @@ footer p {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
+}
+
+.back-to-top i {
+    font-size: 0.8em;
 }
 
 .back-to-top.show {

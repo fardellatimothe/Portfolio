@@ -237,18 +237,24 @@ projectCards.forEach((card) => {
     observer.observe(card);
 });
 
-function pdf() {
-    const url = '/Timothé_FARDELLA_CV.pdf'; // Remplacez par le chemin de votre PDF
 
-    window.open(url, '_blank');
+// Barre de navigation scroll
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
 
-    // Créer un lien pour le téléchargement
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = ''; // Nom du fichier (laisser vide pour utiliser le nom original)
-    document.body.appendChild(link);
-    link.click(); // Simuler le clic pour le téléchargement
-    document.body.removeChild(link); // Retirer le lien
-}
+window.addEventListener('scroll', () => {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Si on défile vers le bas - on masque la navbar
+        navbar.classList.add('hidden');
+    } else {
+        // Si on défile vers le haut - on affiche la navbar
+        navbar.classList.remove('hidden');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Evite un bug mobile
+});
+
 
 
