@@ -237,24 +237,23 @@ projectCards.forEach((card) => {
     observer.observe(card);
 });
 
+// Sélectionner tous les éléments de formation
+const educationItems = document.querySelectorAll('.education-item');
 
-// Barre de navigation scroll
-let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > lastScrollTop) {
-        // Si on défile vers le bas - on masque la navbar
-        navbar.classList.add('hidden');
-    } else {
-        // Si on défile vers le haut - on affiche la navbar
-        navbar.classList.remove('hidden');
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Evite un bug mobile
+const educationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            educationObserver.unobserve(entry.target); // Arrêter d'observer après l'animation
+        }
+    });
+}, {
+    threshold: 0.1
 });
 
-
-
+educationItems.forEach((item) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(50px)';
+    educationObserver.observe(item);
+});

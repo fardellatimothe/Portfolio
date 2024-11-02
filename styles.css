@@ -165,6 +165,8 @@ header h1 {
         padding: 10px 20px;
         gap: 15px;
         border-radius: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .title-slogan {
@@ -344,11 +346,17 @@ header h1 {
 
 /* Responsivité pour les petits écrans */
 @media (max-width: 768px) {
+    .about-section-horizontal {
+        padding: 40px 20px 40px 20px;
+    }
+
+
     .about-container-horizontal {
         flex-direction: column; /* Passage en colonne */
         align-items: center; /* Centre les éléments */
         padding: 20px; /* Réduit le padding */
         gap: 20px; /* Espace entre les éléments */
+        padding: 40px 20px 40px 20px;
     }
 
     .about-photo {
@@ -396,6 +404,7 @@ header h1 {
 @media (max-width: 480px) {
     .about-container-horizontal {
         padding: 15px; /* Réduit davantage le padding */
+        padding: 40px 20px 40px 20px;
     }
 
     .about-image-round {
@@ -544,6 +553,122 @@ header h1 {
 
 .marquee:hover .marquee-content {
     animation-play-state: paused;
+}
+
+
+/* Section Formation */
+.formation {
+    background-color: var(--light-gray);
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.formation-container {
+    background: linear-gradient(to right, #e6f7ff, #d0efff, #b8e7ff); /* Couleurs plus douces */
+    padding: 3rem 2rem; /* Utilise le padding au lieu de margin pour garder le fond */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2a4f74;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: #2980b9;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.school-info, .additional-info, .pbl-info {
+    margin-bottom: 2rem;
+}
+
+.school-info h3, .pbl-info h4, .additional-info h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border-left: 4px solid #2980b9;
+    padding-left: 10px;
+}
+
+.school-info p, .additional-info p, .pbl-info p {
+    font-size: 1rem;
+    color: #566573;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+.formation-image {
+    display: flex; /* Utilise Flexbox pour centrer le contenu */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    margin-top: 1.5rem; /* Optionnel : Ajoute de l'espace en haut si nécessaire */
+}
+
+.formation-image img {
+    width: 100%; /* L'image prend 100% de la largeur de son conteneur */
+    max-width: 400px; /* Ajuste selon la taille que tu souhaites */
+    height: auto; /* Garde le ratio d'aspect de l'image */
+    object-fit: cover; /* S'assure que l'image remplit le conteneur sans être déformée */
+    border-radius: 8px; /* Pour arrondir les coins si souhaité */
+}
+
+@media (max-width: 768px) {
+    .formation-container {
+        padding: 2rem 1rem;
+        margin: auto 20px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-title::after {
+        width: 50px;
+        height: 3px;
+    }
+
+    .school-info h3, .pbl-info h4 {
+        font-size: 1.5rem;
+    }
+
+    .school-info p, .additional-info p, .pbl-info p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #formation {
+        padding: 1.5rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .school-info h3, .pbl-info h4 {
+        font-size: 1.3rem;
+    }
+
+    .school-info p, .additional-info p, .pbl-info p {
+        font-size: 0.9rem;
+    }
 }
 
 
