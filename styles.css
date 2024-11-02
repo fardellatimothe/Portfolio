@@ -350,7 +350,6 @@ header h1 {
         padding: 40px 20px 40px 20px;
     }
 
-
     .about-container-horizontal {
         flex-direction: column; /* Passage en colonne */
         align-items: center; /* Centre les éléments */
@@ -377,8 +376,12 @@ header h1 {
         margin-bottom: 15px; /* Réduit l'espacement en bas */
     }
 
+    .welcome-text {
+        font-size: 1.4rem;
+    }
+
     .console-underscore {
-        font-size: 1.3em;
+        font-size: 1em;
     }
 
     .about-presentation-title h3 {
@@ -638,7 +641,7 @@ header h1 {
 @media (max-width: 768px) {
     .formation-container {
         padding: 2rem 1rem;
-        margin: auto 0;
+        margin: auto 20px;
     }
 
     .section-title {
