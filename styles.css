@@ -378,7 +378,7 @@ header h1 {
     }
 
     .console-underscore {
-        font-size: 1em;
+        font-size: 1.3em;
     }
 
     .about-presentation-title h3 {
@@ -557,7 +557,7 @@ header h1 {
 
 @media (max-width: 768px) {
     .marquee {
-        margin: 75px 20px 75px 20px;
+        margin: 75px 0;
     }
 }
 
@@ -638,7 +638,7 @@ header h1 {
 @media (max-width: 768px) {
     .formation-container {
         padding: 2rem 1rem;
-        margin: auto 20px;
+        margin: auto 0;
     }
 
     .section-title {
