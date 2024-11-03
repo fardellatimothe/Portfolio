@@ -641,7 +641,7 @@ header h1 {
 @media (max-width: 768px) {
     .formation-container {
         padding: 2rem 1rem;
-        margin: auto 20px;
+        margin: auto 0;
     }
 
     .section-title {
