@@ -31,24 +31,24 @@
     </script>
 </head>
 <body>
-
     <!-- Page d'introduction -->
-    <div id="intro-page" class="intro-page">
-        <h1 class="fade-in">Bienvenue sur mon Portfolio !</h1>
+    <div id="page-intro" class="page-intro">
+        <h1 class="title-animation">Bienvenue sur mon Portfolio !</h1>
     </div>
 
     <!-- Page Principale -->
     <main id="main-content" class="main-content"> 
+
         <!-- Barre de navigation -->
         <header class="navbar">
-            <div class="container">
-                <div class="logo-slogan" onclick="refreshPage()">
-                    <img src="https://fardellatimothe.github.io/Portfolio/img/Logosite_page.png" alt="Logo" class="logo">
-                    <h1 class="title-slogan">OPTIMISER LE PRÉSENT, CRÉER L'AVENIR.</h1>
+            <div class="nav-container">
+                <div class="nav-logo-slogan" onclick="refreshPage()">
+                    <img src="https://fardellatimothe.github.io/Portfolio/img/Logosite_page.png" alt="Logo" class="nav-logo">
+                    <h1 class="nav-title-slogan">OPTIMISER LE PRÉSENT, CRÉER L'AVENIR.</h1>
                 </div>
                 <nav class="nav">
                     <ul class="nav-links">
-                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#about">À propos</a></li>
                         <li><a href="#skills">Compétences</a></li>
                         <li><a href="#formation">Formation</a></li>
                         <li><a href="#projects">Projets</a></li>
@@ -59,16 +59,16 @@
         </header>
 
         <!-- Section Présentation -->
-        <section id="apropos" class="about-section-horizontal">
+        <section id="about" class="about-section">
             <div class="console-container">
                 <span id="welcome-text"></span>
                 <div class="console-underscore" id="console">&#95;</div>
             </div>
-            <div class="about-container-horizontal">
+            <div class="about-container">
                 <div class="about-photo">
                     <img src="https://fardellatimothe.github.io/Portfolio/img/photo-cesi.jpg" alt="Ma Photo" class="about-image-round">
                 </div>
-                <div class="about-content-horizontal">
+                <div class="about-content">
                     <div class="about-presentation">
                         <div class="about-presentation-title">
                             <h3>TIMOTHÉ FARDELLA</h3>
@@ -96,9 +96,9 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="button-group">
-                        <a href="https://fardellatimothe.github.io/Portfolio/Timothé_FARDELLA_CV.pdf" target="_blank" class="cta-button-horizontal">Résumé</a>
-                        <a href="#contact" class="cta-button-horizontal">Contactez-moi</a>
+                    <div class="about-button-group">
+                        <a href="https://fardellatimothe.github.io/Portfolio/Timothé_FARDELLA_CV.pdf" target="_blank" class="about-button">Résumé</a>
+                        <a href="#contact" class="about-button">Contactez-moi</a>
                     </div>
                 </div>
             </div>

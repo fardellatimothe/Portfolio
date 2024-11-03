@@ -1,4 +1,4 @@
-/* Reset de base */
+/* Style Globale Site */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
 }
 
-/* Variables de couleurs */
+/* Variables Globales */
 :root {
     --dark-blue: #1E3A8A;
     --light-blue: #60A5FA;
@@ -15,37 +15,64 @@
     --dark-gray: #4B5563;
 }
 
+
 /* Style général */
-.main-body {
+body {
     background-color: var(--light-gray);
     color: var(--dark-gray);
 }
 
 
-
-/* Style pour la page d'introduction */
-.intro-page {
+/* Style Page d'Introduction */
+.page-intro {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--light-blue); /* Bleu */
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-blue);
+    color: white;
     font-size: 2rem;
-    z-index: 1000;
-    transition: opacity 2s ease-out;
     opacity: 1;
+    transition: opacity 2s ease;
 }
 
-.intro-page.hidden {
+.page-intro.hidden {
     opacity: 0;
     pointer-events: none; 
 }
 
+
+.title-animation{
+    opacity: 0; 
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .page-intro {
+        font-size: 1.5rem; 
+        padding: 20px; 
+        text-align: center;
+    }
+
+    .title-animation {
+        font-size: 1.8rem; 
+    }
+}
+
+
+/* Effet Page Principale */
 .main-content {
     display: none;
     opacity: 0;
@@ -53,84 +80,43 @@
 }
 
 
-.fade-in {
-    opacity: 0; 
-    animation: fadeInEffect 1s ease-in forwards;
-}
-
-@keyframes fadeInEffect {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .intro-page {
-        font-size: 1.5rem; 
-        padding: 20px; 
-        text-align: center;
-    }
-
-    .intro-page h1 {
-        font-size: 1.8rem; 
-    }
-}
+/*--------------*/
 
 
 /* Barre de navigation */
 header {
-    background-color: var(--light-blue);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px 0;
 }
 
-header h1 {
-    color: white;
-    text-align: center;
-    font-size: 2rem;
-}
-
 .navbar {
-    background-color: var(--light-gray);
-    top: 0;
-    z-index: 1000;
     padding-top: 10px;
 }
 
-.navbar .container {
+.nav-container {
     background-color: var(--light-blue);
     display: flex;
-    justify-content: space-between; /* Pour espacer les éléments */
+    justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 20px 25px;
     max-width: 100%;
     border-radius: 75px;
-    margin: 10px 5px 10px 5px; /*haut droit bas gauche*/
+    margin: 10px 65px 10px 65px; /*haut droit bas gauche*/
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    margin-left: 60px;
-    margin-right: 60px;
 }
 
-.logo-slogan {
+.nav-logo-slogan {
     display: flex;
     align-items: center; 
     cursor: pointer;
 }
 
-.logo {
+.nav-logo {
     height: 40px;
     border-radius: 50%;
     margin-right: 15px;
 }
 
-.title-slogan {
+.nav-title-slogan {
     font-size: 22px;
     color: var(--dark-blue); /* Assurez-vous d'avoir défini cette variable */
 }
@@ -160,7 +146,7 @@ header h1 {
 }
 
 @media (max-width: 850px) {
-    .navbar .container {
+    .nav-container {
         flex-direction: column;
         padding: 10px 20px;
         gap: 15px;
@@ -169,7 +155,7 @@ header h1 {
         margin-right: 20px;
     }
 
-    .title-slogan {
+    .nav-title-slogan {
         font-size: 18px;
         text-align: center;
     }
@@ -185,16 +171,21 @@ header h1 {
     }
 }
 
+
 /* Section de presentation */
-.about-section-horizontal {
+.about-section {
     justify-content: center;
     align-items: center;
     padding: 40px 60px 60px 60px;
-    background-color: #f4f4f9;
     color: #333;
 }
 
-.about-container-horizontal {
+.title-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -203,16 +194,10 @@ header h1 {
     gap: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    padding: 40px 60px 40px 60px;
+    padding: 40px 60px;
     background-color: #fff;
-    max-width:  100%;
+    margin: 0 auto;
 }
-
-.title-container {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 
 .about-photo {
     flex-shrink: 0;
@@ -226,7 +211,7 @@ header h1 {
     border: 2px solid var(--light-gray);
 }
 
-.about-content-horizontal {
+.about-content {
     flex: 1;
     text-align: left;
 }
@@ -286,7 +271,7 @@ header h1 {
     gap: 15px;
     color: #0073e6;
     font-weight: 600;
-    align-items: flex-start; /* Aligne les éléments à gauche (ou change pour center si besoin) */
+    align-items: flex-start;
 }
 
 .about-presentation-softskills {
@@ -296,6 +281,7 @@ header h1 {
 .about-presentation-softskills li:hover {
     transform: scale(1.2);
 }
+
 .features-list li {
     background-color: #f0f8ff;
     padding: 6px 12px;
@@ -321,16 +307,16 @@ header h1 {
     color: #6e6e6e;
 }
 
-.button-group {
+.about-button-group {
     display: flex;
     gap: 15px;
     margin-top: 25px;
 }
 
-.button-group a {
+.about-button-group a {
     cursor: pointer;
 }
-.cta-button-horizontal {
+.about-button {
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -340,40 +326,39 @@ header h1 {
     transition: background-color 0.3s ease;
 }
 
-.cta-button-horizontal:hover {
+.about-button:hover {
     background-color: #005bb5;
 }
 
-/* Responsivité pour les petits écrans */
 @media (max-width: 768px) {
-    .about-section-horizontal {
+    .about-section {
         padding: 40px 20px 40px 20px;
     }
 
-    .about-container-horizontal {
-        flex-direction: column; /* Passage en colonne */
-        align-items: center; /* Centre les éléments */
-        padding: 20px; /* Réduit le padding */
-        gap: 20px; /* Espace entre les éléments */
+    .about-container {
+        flex-direction: column; 
+        align-items: center;
+        padding: 20px; 
+        gap: 20px; 
         padding: 40px 20px 40px 20px;
     }
 
     .about-photo {
-        margin-bottom: 20px; /* Espace sous la photo */
+        margin-bottom: 20px; 
     }
 
     .about-image-round {
-        width: 130px; /* Taille réduite de la photo */
+        width: 130px; 
         height: 130px;
     }
 
-    .about-content-horizontal {
-        text-align: center; /* Centre le texte */
+    .about-content {
+        text-align: center; 
     }
 
     .console-container {
         font-size: 1.3rem;
-        margin-bottom: 15px; /* Réduit l'espacement en bas */
+        margin-bottom: 15px; 
     }
 
     .welcome-text {
@@ -385,49 +370,53 @@ header h1 {
     }
 
     .about-presentation-title h3 {
-        font-size: 1.4rem; /* Taille réduite pour le titre */
+        font-size: 1.4rem; 
+    }
+
+    .about-presentation-softskills {
+        justify-items: center;
     }
 
     .features-list {
-        grid-template-columns: 1fr; /* Affiche la liste en colonne unique */
-        gap: 10px; /* Espace réduit entre les éléments */
+        align-items: center;
+        grid-template-columns: 1fr; 
+        gap: 10px; 
     }
 
-    .button-group {
-        flex-direction: column; /* Place les boutons en colonne */
-        gap: 10px; /* Espace entre les boutons */
+    .about-button-group {
+        flex-direction: column; 
+        gap: 10px; 
     }
 
-    .button-group a {
-        width: 100%; /* Boutons en pleine largeur */
+    .about-button-group a {
+        width: 100%; 
         text-align: center;
     }
 }
 
 @media (max-width: 480px) {
-    .about-container-horizontal {
-        padding: 15px; /* Réduit davantage le padding */
+    .about-container {
+        padding: 15px; 
         padding: 40px 20px 40px 20px;
     }
 
     .about-image-round {
-        width: 100px; /* Taille encore réduite pour les très petits écrans */
+        width: 100px; 
         height: 100px;
     }
 
     #welcome-text {
-        font-size: 1.3rem; /* Taille de texte réduite pour le message de bienvenue */
+        font-size: 1.3rem; 
     }
 
     .about-presentation-title h3 {
-        font-size: 1.2rem; /* Réduit la taille du titre */
+        font-size: 1.2rem; 
     }
 
     .about-presentation-desc {
-        font-size: 0.9rem; /* Réduit la taille du texte de description */
+        font-size: 0.9rem; 
     }
 }
-
 
 
 /* Section compétences */

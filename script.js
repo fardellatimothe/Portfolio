@@ -1,11 +1,34 @@
+// Effet Intro
+document.addEventListener("DOMContentLoaded", function () {
+    const pageIntro = document.getElementById("page-intro");
+    const mainContent = document.getElementById("main-content");
+
+    function hideIntro() {
+        pageIntro.classList.add("hidden");
+        setTimeout(() => {
+            pageIntro.style.display = "none";
+            mainContent.style.display = "block";
+            mainContent.style.opacity = 1;
+        }, 1000);
+    }
+
+    setTimeout(hideIntro, 2000); // Cacher l'introduction après 2 secondes
+});
+
+
+// Refresh la page au clic
 function refreshPage() {
     location.replace(location.pathname + location.search);
 }
 
+
+//
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+
+// 
 window.addEventListener('scroll', () => {
     const button = document.querySelector('.back-to-top');
     if (window.scrollY > 50) {
@@ -16,6 +39,7 @@ window.addEventListener('scroll', () => {
 });
 
 
+// 
 function sendMail() {
     var parms = {
         name: document.getElementById("name").value,
@@ -131,24 +155,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     typeWriter();
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const introPage = document.getElementById("intro-page");
-    const mainContent = document.getElementById("main-content");
-
-    function hideIntro() {
-        introPage.classList.add("hidden");
-        setTimeout(() => {
-            introPage.style.display = "none";
-            mainContent.style.display = "block";
-            mainContent.style.opacity = 1;
-        }, 1000); // Assurez-vous que cela correspond au délai de la transition CSS
-    }
-
-    // Cacher l'introduction après 2 secondes
-    setTimeout(hideIntro, 2000);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
