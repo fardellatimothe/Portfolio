@@ -639,6 +639,10 @@ header h1 {
 }
 
 @media (max-width: 768px) {
+    .formation {
+        padding: auto 0;
+    }
+
     .formation-container {
         padding: 2rem 1rem;
         margin: auto 0;
