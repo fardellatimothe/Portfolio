@@ -421,15 +421,15 @@ header {
 
 /* Section compétences */
 .skills-section {
-    padding: 60px 20px;
     background-color: #F3F4F6; 
+    padding: 60px 20px;
 }
 
-.section-skills-title {
-    font-size: 2.5rem;
+.skills-section-title {
     text-align: center;
-    margin-bottom: 40px;
+    font-size: 2.5rem;
     color: #1E3A8A; 
+    margin-bottom: 40px;
 }
 
 .skills-container {
@@ -442,99 +442,84 @@ header {
 }
 
 .skill-name {
+    display: block;
     font-size: 1.2rem;
+    font-weight: bold;
     color: #4B5563;
     margin-bottom: 5px;
-    display: block;
     margin-left:10px;
-    font-weight: bold;
 }
 
-.skills-section .progress-bar {
-    background-color: #E5E7EB;
-    border-radius: 8px;
+.skill-progress-bar {
     overflow: hidden;
     height: 24px;
+    background-color: #E5E7EB;
+    border-radius: 8px;
 }
 
-.skills-section .progress {
-    background-color: #60A5FA;
-    height: 100%;
-    color: white;
-    font-weight: bold;
+.skill-progress {
     text-align: right;
+    background-color: #60A5FA;
+    color: white;
+    height: 100%;
+    width: 0%;
+    font-weight: bold;
     padding-right: 10px;
     border-radius: 8px 0 0 8px;
     transition: width 1s ease-in-out;
 }
-
-.progress {
-    background-color: #60A5FA;
-    height: 100%;
-    color: white;
-    font-weight: bold;
-    text-align: right;
-    padding-right: 10px;
-    border-radius: 8px 0 0 8px;
-    width: 0%; /* Commence à 0 */
-    transition: width 1s ease-in-out;
-}
-
 /* Logo */
-.marquee {
-    overflow: hidden;
-    white-space: nowrap;
-    background-color: #e3f2fd;
-    padding: 20px 0;
+.skills-logo {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: start;
+    overflow: hidden;
+    background-color: #e3f2fd;
+    padding: 65px 0;
     border-radius: 8px;
     margin: 75px 40px 75px 40px;
-    position: relative;
-    padding-top: 45px;
-    padding-bottom: 45px;
 }
 
-.marquee-content {
+.skills-logo-content {
     display: flex;
 }
 
-.logo-box {
+.skill-logo-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 120px; /* Taille uniforme pour toutes les boîtes */
+    width: 120px; 
     height: 120px;
     background-color: #ffffff;
     border: 2px solid #90caf9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin:0 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.logo-box:hover {
+.skill-logo-box:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.logo-box img {
-    width: 60px; /* Taille fixe pour chaque logo */
-    height: auto; /* Maintient les proportions */
+.skill-logo-box img {
+    width: 60px; 
+    height: auto; 
     margin-bottom: 8px;
 }
 
-.logo-box span {
+.skill-logo-box span {
     font-size: 0.85em;
     font-weight: bold;
     color: #1565c0;
     text-align: center;
 }
 
-.marquee:hover .marquee-content {
+.skills-logo:hover .skills-logo-content {
     animation-play-state: paused;
 }
 
@@ -548,7 +533,7 @@ header {
 }
 
 @media (max-width: 768px) {
-    .marquee {
+    .skills-logo {
         margin: 75px 0;
     }
 }
@@ -571,7 +556,7 @@ header {
     max-width: 1000px;
 }
 
-.section-title {
+.formation-title {
     text-align: center;
     font-size: 2.5rem;
     color: #2a4f74;
@@ -580,7 +565,7 @@ header {
     position: relative;
 }
 
-.section-title::after {
+.formation-title::after {
     content: "";
     width: 60px;
     height: 4px;
@@ -592,11 +577,11 @@ header {
     border-radius: 2px;
 }
 
-.school-info, .additional-info, .pbl-info {
+.formation-school-info, .formation-additional-info, .formation-pbl-info {
     margin-bottom: 2rem;
 }
 
-.school-info h3, .pbl-info h4, .additional-info h3 {
+.formation-school-info h3, .formation-pbl-info h4, .formation-additional-info h3 {
     font-size: 1.8rem;
     color: #2c3e50;
     font-weight: 600;
@@ -605,26 +590,29 @@ header {
     padding-left: 10px;
 }
 
-.school-info p, .additional-info p, .pbl-info p {
+.formation-school-info p, .formation-additional-info p, .formation-pbl-info p {
     font-size: 1rem;
     color: #566573;
     line-height: 1.6;
     margin: 0.5rem 0;
 }
 
-.formation-image {
-    display: flex; /* Utilise Flexbox pour centrer le contenu */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    margin-top: 1.5rem; /* Optionnel : Ajoute de l'espace en haut si nécessaire */
+.formation-container-image {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 1.5rem;
 }
 
-.formation-image img {
-    width: 100%; /* L'image prend 100% de la largeur de son conteneur */
-    max-width: 400px; /* Ajuste selon la taille que tu souhaites */
-    height: auto; /* Garde le ratio d'aspect de l'image */
-    object-fit: cover; /* S'assure que l'image remplit le conteneur sans être déformée */
-    border-radius: 8px; /* Pour arrondir les coins si souhaité */
+.formation-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    max-width: 400px; 
+    height: auto;
+    object-fit: cover; 
+    border-radius: 8px; 
 }
 
 @media (max-width: 768px) {
@@ -636,21 +624,21 @@ header {
         padding: 2rem 1rem;
     }
 
-    .section-title {
+    .formation-title {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
 
-    .section-title::after {
+    .formation-title::after {
         width: 50px;
         height: 3px;
     }
 
-    .school-info h3, .pbl-info h4 {
+    .formation-school-info h3, .formation-pbl-info h4 {
         font-size: 1.5rem;
     }
 
-    .school-info p, .additional-info p, .pbl-info p {
+    .formation-school-info p, .formation-additional-info p, .formation-pbl-info p {
         font-size: 0.95rem;
     }
 }
@@ -660,29 +648,29 @@ header {
         padding: 1.5rem 1rem;
     }
 
-    .section-title {
+    .formation-title {
         font-size: 1.8rem;
     }
 
-    .school-info h3, .pbl-info h4 {
+    .formation-school-info h3, .formation-pbl-info h4 {
         font-size: 1.3rem;
     }
 
-    .school-info p, .additional-info p, .pbl-info p {
+    .formation-school-info p, .formation-additional-info p, .formation-pbl-info p {
         font-size: 0.9rem;
     }
 }
 
 
 /* Section Projets */
-#projects {
+.projects {
     padding: 3rem 1rem;
     text-align: center;
     background-color: #f9f9f9;
     padding-bottom: 80px;
 }
 
-.section-project-title {
+.project-title {
     font-size: 2.5rem;
     color: var(--dark-blue);
     margin-bottom: 50px;
@@ -698,13 +686,13 @@ header {
 }
 
 .project-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
     opacity: 0;
     transform: translateY(50px);
@@ -717,12 +705,12 @@ header {
 }
 
 .project-image {
-    height: 180px;
-    width: 100%;
-    background-color: #e1e4e8;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 180px;
+    width: 100%;
+    background-color: #e1e4e8;
 }
 
 .project-image i {
@@ -731,8 +719,8 @@ header {
 }
 
 .project-content {
-    padding: 1.5rem;
     text-align: left;
+    padding: 1.5rem;
     width: 100%;
 }
 
@@ -772,7 +760,7 @@ header {
         gap: 20px;
     }
     
-    .section-project-title {
+    .project-title {
         font-size: 2rem;
         margin-bottom: 30px;
     }
@@ -816,10 +804,10 @@ header {
 }
 
 .contact-title {
+    text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
     color: #1e3a8a; 
-    text-align: center;
     margin-bottom: 50px; 
 }
 
@@ -831,23 +819,16 @@ header {
     margin: 0 auto;
 }
 
-@media(min-width: 768px) {
-    .contact-column {
-        flex-direction: row;
-        align-items: stretch;
-    }
-}
-
 .contact-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     background-color: white;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     flex: 1;
-    display: flex;
-    flex-direction: column;
     gap: 15px;
-    text-align: center;
     max-height: 100%;
 }
 
@@ -870,11 +851,7 @@ header {
     color: var(--dark-blue);
 }
 
-.contact-item .fa-brands {
-    font-size: 1.8rem;
-}
-
-.contact-item a:hover i {
+.contact-item /*a:hover*/ i {
     color: var(--dark-gray);
     transform: scale(1.2);
 }
@@ -899,10 +876,45 @@ header {
     transform: scale(1.2);
 }
 
+.contact-cv {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.contact-cvbutton {
+    display: inline-flex;
+    align-items: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #0073e6;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-cvbutton:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+.contact-cvbutton i {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.contact-cvbutton a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
 .contact-form {
     flex: 1;
-    display: flex;
     flex-direction: column;
+    display: flex;
     gap: 15px;
 }
 
@@ -925,11 +937,12 @@ header {
     flex:1;
 }
 
-.message-icon {
+.contact-message-icon {
     margin-right:5px;
 }
 
 .contact-form button {
+    align-items: center;
     padding: 12px 20px;
     background-color: #0073e6;
     color: white;
@@ -938,7 +951,6 @@ header {
     font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s;
-    align-items: center;
 }
 
 .contact-form button:hover {
@@ -949,41 +961,12 @@ header {
     background-color: var(--dark-gray);
 }
 
-.contact-cvbutton {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
+@media(min-width: 768px) {
+    .contact-column {
+        flex-direction: row;
+        align-items: stretch;
+    }
 }
-
-.cvbutton {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px; /* Espace entre l'icône et le texte */
-    padding: 10px 20px;
-    background-color: #0073e6;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
-    align-items: center;
-}
-
-.cvbutton:hover {
-    background-color: #005bb5;
-    transform: translateY(-2px);
-}
-
-.cvbutton i {
-    font-size: 1rem;
-    color: #fff;
-}
-
-.cvbutton a {
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-
 
 @media (max-width: 768px) {
     .contact-info,
@@ -1008,36 +991,14 @@ header {
 }
 
 
-/* Footer */
-footer {
-    background-color: var(--dark-blue);
-    padding: 1.5rem 0; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.container {
-    max-width: 100%; 
-    margin: 0 auto; 
-    text-align: center; 
-}
-
-footer p {
-    color: var(--light-gray);
-    margin: 0 auto; 
-}
-
-/*Button pour revenir en haut*/
-
+/*Button retour en haut*/
 .back-to-top {
     position: fixed;
     bottom: 82px;
     right: 20px;
     width: 40px;
     height: 40px;
-    background-color: var(--dark-blue); /* Couleur du bouton */
+    background-color: var(--dark-blue);
     color: white;
     border-radius: 50%;
     text-align: center;
@@ -1057,22 +1018,31 @@ footer p {
 .back-to-top.show {
     opacity: 1;
     visibility: visible;
-    transition: transform 0.3s; /* Transition pour agrandir la flèche */
+    transition: transform 0.3s;
 }
 
 .back-to-top:hover {
-    transform: scale(1.2); /* Agrandir le logo de 20% au survol */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ombre portée */
+    transform: scale(1.2); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.typing-animation {
-    font-size: 2em;
-    font-weight: bold;
-    color: #333;
-    white-space: nowrap; /* Pour s'assurer que le texte reste sur une seule ligne */
-    overflow: hidden;    /* Cache le texte débordant */
-    border-right: 3px solid; /* Simule le curseur */
-    width: 0;            /* La largeur commence à 0 pour l'animation */
-    animation: typing 3s steps(30, end), blink-caret 0.6s step-end infinite;
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-blue);
+    padding: 1.5rem 0;
 }
 
+.footer-container {
+    text-align: center; 
+    max-width: 100%; 
+    margin: 0 auto; 
+}
+
+footer p {
+    color: var(--light-gray);
+    margin: 0 auto; 
+}
