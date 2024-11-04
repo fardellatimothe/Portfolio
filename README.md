@@ -19,5 +19,5 @@ Bienvenue sur mon portfolio ! Ce site présente mes compétences, formations, pr
 ## Liens
 
 - **Portfolio en ligne** : [Lien vers le site](https://fardellatimothe.github.io/Portfolio/)
-- **LinkedIn** : [Mon profil LinkedIn](https://www.linkedin.com/in/timothefardella/)
+- **LinkedIn** : [Mon profil LinkedIn](www.linkedin.com/in/timothé-fardella-519446335)
 - **GitHub** : [Mon GitHub](https://github.com/fardellatimothe)
