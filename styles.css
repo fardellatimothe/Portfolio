@@ -118,7 +118,7 @@ header {
 
 .nav-title-slogan {
     font-size: 22px;
-    color: var(--dark-blue); /* Assurez-vous d'avoir défini cette variable */
+    color: var(--dark-blue); 
 }
 
 .nav-links {
@@ -126,7 +126,7 @@ header {
     list-style: none;
     display: flex;
     font-weight: bold;
-    margin-left: auto; /* Ajoute cette ligne pour pousser la liste à droite */
+    margin-left: auto; 
     flex-grow: 1;
 }
 
@@ -548,8 +548,8 @@ header {
 }
 
 .formation-container {
-    background: linear-gradient(to right, #e6f7ff, #d0efff, #b8e7ff); /* Couleurs plus douces */
-    padding: 3rem 2rem; /* Utilise le padding au lieu de margin pour garder le fond */
+    background: linear-gradient(to right, #e6f7ff, #d0efff, #b8e7ff); 
+    padding: 3rem 2rem;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
