@@ -174,7 +174,7 @@ function sendMail() {
         successPopup.style.backgroundColor = "rgba(0, 128, 0, 0.9)";
         successPopup.style.color = "white";
         successPopup.style.borderRadius = "5px";
-        successPopup.innerText = "Votre message a été envoyé avec succès!";
+        successPopup.innerText = "Votre message a été envoyé !";
         document.body.appendChild(successPopup);
 
         // Supprimer pop-up de succès
