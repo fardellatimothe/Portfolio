@@ -128,7 +128,7 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target); // Arrête d'observer une fois l'animation effectuée
+            observer.unobserve(entry.target); 
         }
     });
 }, { threshold: 0.1 });
