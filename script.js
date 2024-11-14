@@ -56,33 +56,19 @@ document.addEventListener("DOMContentLoaded", function () {
     typeWriter();
 });
 
+// Barre de Compétences 
 
+const levels = document.querySelectorAll('.level-example');
+levels.forEach(level => {
+    level.addEventListener('mouseover', () => {
+        const description = level.getAttribute('data-description');
+        level.setAttribute('title', description);
+    });
 
-// Effet barre de Compétences %
-document.addEventListener("DOMContentLoaded", function () {
-    const skillsSection = document.querySelector(".skills-section");
-    const progressBars = document.querySelectorAll(".skill-progress");
-
-    function animateProgressBars() {
-        progressBars.forEach(bar => {
-            const finalWidth = bar.getAttribute("data-progress"); 
-            bar.style.width = finalWidth + "%";
-            bar.textContent = finalWidth + "%";
-        });
-    }
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateProgressBars();
-                observer.unobserve(skillsSection);
-            }
-        });
-    }, { threshold: 0.4 }); // lance l'animation quand 40% de la section compétence est visible
-
-    observer.observe(skillsSection);
+    level.addEventListener('mouseout', () => {
+        level.removeAttribute('title');
+    });
 });
-
 
 
 // Compétences Barre de défilement
@@ -92,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const clone = marqueeContent.cloneNode(true);
     marquee.appendChild(clone);
 
-    let speed = 1.3;
+    let speed = 0.4;
     let scrollPosition = 0;
     let animationActive = true; // controle l'animation
 
@@ -138,14 +124,80 @@ projectCards.forEach((card) => {
     observer.observe(card);
 });
 
+// Cartes de projet animation
+const projectCardsUpcoming = document.querySelectorAll('.project-card-upcoming');
+
+const observerupcoming = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target); 
+        }
+    });
+}, { threshold: 0.1 });
+projectCardsUpcoming.forEach((card) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(50px)';
+    observerupcoming.observe(card);
+});
+
 
 
 // Envoie mail avec Formulaire
 function sendMail() {
+
+    var name = document.getElementById("name").value.trim();
+    var mail = document.getElementById("mail").value.trim();
+    var message = document.getElementById("message").value.trim();
+
+    // Vérifier que les champs ne sont pas vides
+    if (name === "" || mail === "" || message === "") {
+        // pop-up d'erreur
+        var errorPopup = document.createElement("div");
+        errorPopup.style.position = "fixed";
+        errorPopup.style.top = "20px";  
+        errorPopup.style.right = "20px"; 
+        errorPopup.style.padding = "20px";
+        errorPopup.style.backgroundColor = "rgba(255, 0, 0, 0.8)";
+        errorPopup.style.color = "white";
+        errorPopup.style.borderRadius = "5px";
+        errorPopup.innerText = "Tous les champs doivent être remplis.";
+        document.body.appendChild(errorPopup);
+
+        // Supprimer pop-up d'erreur
+        setTimeout(function() {
+            document.body.removeChild(errorPopup);
+        }, 3000);
+        return;
+    }
+
+    // Vérifier la validité de l'email
+    var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (!emailRegex.test(mail)) {
+        // pop-up d'erreur
+        var errorPopup = document.createElement("div");
+        errorPopup.style.position = "fixed";
+        errorPopup.style.top = "20px";  
+        errorPopup.style.right = "20px"; 
+        errorPopup.style.padding = "20px";
+        errorPopup.style.backgroundColor = "rgba(255, 0, 0, 0.8)";
+        errorPopup.style.color = "white";
+        errorPopup.style.borderRadius = "5px";
+        errorPopup.innerText = "L'adresse email saisie n'est pas valide.";
+        document.body.appendChild(errorPopup);
+
+        // Supprimer pop-up d'erreur
+        setTimeout(function() {
+            document.body.removeChild(errorPopup);
+        }, 3000);
+        return;
+    }
+
     var parms = {
-        name: document.getElementById("name").value,
-        mail: document.getElementById("mail").value,
-        message: document.getElementById("message").value,
+        name: name,
+        mail: mail,
+        message: message,
     };
 
     // pop-up de chargement
@@ -174,13 +226,13 @@ function sendMail() {
         successPopup.style.backgroundColor = "rgba(0, 128, 0, 0.9)";
         successPopup.style.color = "white";
         successPopup.style.borderRadius = "5px";
-        successPopup.innerText = "Votre message a été envoyé !";
+        successPopup.innerText = "Votre message a été envoyé !\nVous recevrez une copie du mail envoyé (vérifié dans vos spams).";
         document.body.appendChild(successPopup);
 
         // Supprimer pop-up de succès
         setTimeout(function() {
             document.body.removeChild(successPopup);
-        }, 3000);
+        }, 5000);
 
         document.getElementById("name").value = "";
         document.getElementById("mail").value = "";
@@ -216,7 +268,7 @@ function showPopup(message) {
 
     setTimeout(() => {
         popup.remove();
-    }, 3000);
+    }, 5000);
 }
 
 

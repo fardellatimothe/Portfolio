@@ -125,9 +125,10 @@ header {
     font-size: 18px;
     list-style: none;
     display: flex;
+    margin-left: auto;
     font-weight: bold;
-    margin-left: auto; 
     flex-grow: 1;
+    align-items: center;
 }
 
 .nav-links li {
@@ -138,6 +139,8 @@ header {
     color: white;
     text-decoration: none;
     transition: color 0.3s;
+    justify-items: center;
+    align-items: center;
 }
 
 .nav-links a:hover {
@@ -419,16 +422,190 @@ header {
 }
 
 
+/* Section Projets */
+.projects {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding-bottom: 80px;
+}
+
+.project-title {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 50px;
+}
+
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    width: 100%;
+    background-color: #e1e4e8;
+}
+
+.project-image i {
+    font-size: 3rem;
+    color: var(--dark-blue);
+}
+
+.project-content {
+    text-align: left;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.project-content h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* A venir */
+.project-card-upcoming {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid var(--dark-blue);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.project-card-upcoming::before {
+    content: "À venir";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5rem 1rem;
+    background: var(--dark-blue);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 0 0 8px 0;
+    opacity: 0.9;
+}
+
+.project-card-upcoming .project-image i {
+    transition: transform 0.3s ease;
+}
+
+.project-card-upcoming:hover .project-image i {
+    transform: scale(1.1);
+}
+
+
+.project-github-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #555;
+}
+
+.project-github-link a {
+    color: var(--light-blue);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-github-link a:hover {
+    color: var(--dark-blue);
+}
+
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .project-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .project-content p {
+        font-size: 0.9rem;
+    }
+    
+    .project-github-link {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-image {
+        height: 150px;
+    }
+    
+    .project-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .project-content p {
+        font-size: 0.85rem;
+    }
+    
+    .project-github-link {
+        font-size: 0.9rem;
+    }
+}
+
+
 /* Section compétences */
 .skills-section {
-    background-color: #F3F4F6; 
+    background-color: #F3F4F6;
     padding: 60px 20px;
 }
 
 .skills-section-title {
     text-align: center;
     font-size: 2.5rem;
-    color: #1E3A8A; 
+    color: #1E3A8A;
     margin-bottom: 40px;
 }
 
@@ -438,7 +615,7 @@ header {
 }
 
 .skill {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .skill-name {
@@ -446,28 +623,117 @@ header {
     font-size: 1.2rem;
     font-weight: bold;
     color: #4B5563;
-    margin-bottom: 5px;
-    margin-left:10px;
+    margin-bottom: 8px;
+    margin-left: 10px;
 }
 
-.skill-progress-bar {
+.skill-info {
+    position: relative;
+}
+
+/* Barre compétences exemple */
+
+.skill-progress-bar, .skill-bar-example  {
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    position: relative;
     overflow: hidden;
-    height: 24px;
-    background-color: #E5E7EB;
-    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.skill-progress {
-    text-align: right;
-    background-color: #60A5FA;
-    color: white;
+.skill-bar-example {
+    margin-bottom: 70px;
+}
+
+
+.skill-level, .skill-level-example {
+    display: flex;
     height: 100%;
-    width: 0%;
-    font-weight: bold;
-    padding-right: 10px;
-    border-radius: 8px 0 0 8px;
+    width: 100%;
+    position: relative;
+}
+
+.level, .level-example {
+    flex: 1;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 30px;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.level-example {
+    cursor: help;
+}
+
+.level:not(:last-child), .level-example:not(:last-child) {
+    border-right: 2px solid rgba(255,255,255,0.3);
+}
+
+.level:before, .level-example:before {
+    content: attr(data-description);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+  
+.level:hover:before, .level-example:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+  
+
+.beginner {
+    background-color: #4ade80;
+}
+
+.intermediate {
+    background-color: #facc15; 
+}
+
+.advanced {
+    background-color: #fb923c;
+}
+
+.expert {
+    background-color: #ef4444; 
+}
+
+.skill-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+    border-radius: 0 15px 15px 0;
     transition: width 1s ease-in-out;
 }
+
+.skill-level[data-level="1"] .level:nth-child(n+2) {
+    opacity: 0.1;
+}
+  
+.skill-level[data-level="2"] .level:nth-child(n+3) {
+    opacity: 0.1;
+}
+  
+.skill-level[data-level="3"] .level:nth-child(n+4) {
+    opacity: 0.1;
+}
+
 /* Logo */
 .skills-logo {
     position: relative;
