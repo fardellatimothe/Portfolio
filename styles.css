@@ -575,10 +575,6 @@ header {
     .project-github-link {
         font-size: 0.95rem;
     }
-
-    .skill-certif-text {
-        display:none;
-    }
 }
 
 @media (max-width: 480px) {
