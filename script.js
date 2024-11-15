@@ -26,7 +26,14 @@ function refreshPage() {
 
 // Titre Machine à Ecrire
 document.addEventListener("DOMContentLoaded", function () {
-    const words = [ "Bienvenue sur mon Portfolio !", "Je m'appelle Timothé !", "Étudiant aujourd'hui, Ingénieur demain", "Développement Web","Optimiser le présent, créer l'avenir"];
+    const words = [ 
+        "Bienvenue sur mon Portfolio !", 
+        "Je m'appelle Timothé !", 
+        "Étudiant aujourd'hui, Ingénieur demain", 
+        "Développement Web",
+        "Optimiser le présent, créer l'avenir"
+    ];
+    
     let wordIndex = 0;
     let letterIndex = 0;
     const speed = 120; 
@@ -57,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Barre de Compétences 
-
 const levels = document.querySelectorAll('.level-example');
 levels.forEach(level => {
     level.addEventListener('mouseover', () => {
@@ -78,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const clone = marqueeContent.cloneNode(true);
     marquee.appendChild(clone);
 
-    let speed = 0.4;
+    let speed = 0.8;
     let scrollPosition = 0;
     let animationActive = true; // controle l'animation
 
