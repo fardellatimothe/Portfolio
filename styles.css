@@ -212,6 +212,7 @@ header {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--light-gray);
+    transform : rotate(6deg);
 }
 
 .about-content {
