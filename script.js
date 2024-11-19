@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const clone = marqueeContent.cloneNode(true);
     marquee.appendChild(clone);
 
-    let speed = 0.8;
+    let speed = 0.3;
     let scrollPosition = 0;
     let animationActive = true; // controle l'animation
 
