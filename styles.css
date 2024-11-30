@@ -59,7 +59,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .page-intro {
         font-size: 1.5rem; 
         padding: 20px; 
@@ -148,7 +148,7 @@ header {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 2px 2px 15px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     .nav-container {
         flex-direction: column;
         padding: 10px 20px;
@@ -232,11 +232,13 @@ header {
 .console-underscore {
     font-size: 2.5rem;
     padding-top:10px;
+    height: 3rem;
 }
 
 #welcome-text {
     font-size: 3rem;
     font-weight: bold;
+    height: 3rem;
 }
 
 .about-presentation-title {
@@ -334,7 +336,7 @@ header {
     background-color: #005bb5;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .about-section {
         padding: 40px 20px 40px 20px;
     }
@@ -365,11 +367,12 @@ header {
         margin-bottom: 15px; 
     }
 
-    .welcome-text {
-        font-size: 1.4rem;
+    #welcome-text {
+        font-size: 2rem;
     }
 
     .console-underscore {
+        height: 3rem;
         font-size: 1em;
     }
 

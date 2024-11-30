@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const words = [ 
         "Bienvenue sur mon Portfolio !", 
         "Je m'appelle Timothé !", 
-        "Étudiant aujourd'hui, Ingénieur demain", 
-        "Développement Web",
-        "Optimiser le présent, créer l'avenir"
+        "Le développement, une passion",
+        "Des idées au code",
+        "Chaque ligne compte", 
     ];
     
     let wordIndex = 0;
