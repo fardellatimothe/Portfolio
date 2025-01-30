@@ -468,6 +468,14 @@ header {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
+.project-card .project-image i {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image i {
+    transform: scale(1.1);
+}
+
 .project-image {
     display: flex;
     align-items: center;
@@ -499,6 +507,25 @@ header {
     color: #666;
 }
 
+.project-button {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: var(--dark-blue);
+    text-decoration: none;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover .project-button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* A venir */
 .project-card-upcoming {
     display: flex;
@@ -528,15 +555,6 @@ header {
     border-radius: 0 0 8px 0;
     opacity: 0.9;
 }
-
-.project-card-upcoming .project-image i {
-    transition: transform 0.3s ease;
-}
-
-.project-card-upcoming:hover .project-image i {
-    transform: scale(1.1);
-}
-
 
 .project-github-link {
     margin-top: 20px;
