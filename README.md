@@ -5,7 +5,7 @@ Bienvenue sur mon portfolio ! Ce site présente mes compétences, formations, pr
 ## Fonctionnalités
 
 - **À propos** : Brève présentation de mon parcours.
-- - **Projets** : Sélection de mes projets personnels et académiques.
+- **Projets** : Sélection de mes projets personnels et académiques.
 - **Compétences** : Liste de mes compétences avec des barres de progression.
 - **Formation** : Aperçu de mes études et qualifications.
 - **Contact** : Formulaire de contact et liens vers mes réseaux sociaux.
@@ -19,5 +19,5 @@ Bienvenue sur mon portfolio ! Ce site présente mes compétences, formations, pr
 ## Liens
 
 - **Portfolio en ligne** : [Lien vers le site](https://fardellatimothe.github.io/Portfolio/)
-- **LinkedIn** : [Mon profil LinkedIn](www.linkedin.com/in/timothé-fardella-519446335)
+- **LinkedIn** : [Mon profil LinkedIn](www.linkedin.com/in/timothé-fardella)
 - **GitHub** : [Mon GitHub](https://github.com/fardellatimothe)
